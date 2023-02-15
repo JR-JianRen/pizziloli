@@ -85,13 +85,7 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    
-<div class=\"container\">
-    <h1>";
-        // line 8
-        echo twig_escape_filter($this->env, (isset($context["number"]) || array_key_exists("number", $context) ? $context["number"] : (function () { throw new RuntimeError('Variable "number" does not exist.', 8, $this->source); })()), "html", null, true);
-        echo "</h1>
-</div>
+        echo "
 
 ";
         
@@ -114,7 +108,7 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -124,10 +118,7 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
 {% block title %} Home {% endblock %}
 
 {% block body %}
-    
-<div class=\"container\">
-    <h1>{{ number }}</h1>
-</div>
+
 
 {% endblock %}", "index.html.twig", "C:\\Users\\0jian\\Documents\\pizziloli-website\\templates\\index.html.twig");
     }
