@@ -447,6 +447,6 @@ class __TwigTemplate_e31aea1f02938af9d59e68a209b1b90e extends Template
     });
 })();
 </script>
-", "@WebProfiler/Profiler/settings.html.twig", "C:\\Users\\0jian\\Documents\\pizziloli-website\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\settings.html.twig");
+", "@WebProfiler/Profiler/settings.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\settings.html.twig");
     }
 }

@@ -66,17 +66,22 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         // line 28
         echo "</head>
 <body class=\"bg-black\">
-    <div class=\"container\">
+    <div class=\"container-fluid mt-1\">
     ";
         // line 31
         $this->displayBlock('header', $context, $blocks);
-        // line 58
-        echo "    ";
+        // line 41
+        echo "
+
+            ";
+        // line 43
         $this->displayBlock('nav', $context, $blocks);
-        // line 78
-        echo "    ";
+        // line 87
+        echo "
+        ";
+        // line 88
         $this->displayBlock('body', $context, $blocks);
-        // line 81
+        // line 91
         echo "    </div>
 </body>
 </html>";
@@ -153,31 +158,14 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
         // line 32
-        echo "        <header class=\"header mb-3 bg-warning\">
-            <h2 class=\"mt-3\"><a class=\"fw-bolder text-light\" href=\"/home\">Pizziloli</a></h2>
+        echo "        <div class=\"row align-items-start\">
+            <div class=\"col-1\"></div>
+        <div class=\"col-10\">
+                <header class=\"header mb-3 bg-warning\">
+                    <h1 style=\"font-size: 75px\" class=\"mt-3\"><a class=\"fw-bolder text-light text-decoration-none\" href=\"/home\">Pizziloli</a></h1>
 
-            <!--  Nav up & down btn  -->
-            <div class=\"navBtn d-flex justify-content-end\">
-                <script>
-                    let clicks = 0;
-                </script>
-                <button class=\"navbar-toggler  bg-danger d-flex justify-content-end\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" style=\"color: white; font-size: 30px;\">
-                    <span id=\"navBtnId\" class=\"fa-solid fa-bars\"></span>
-                </button>
-                <script>
-                    let navBtnId = document.getElementById(\"navBtnId\");
-                    let toggler = document.getElementsByClassName(\"navbar-toggler\");
-                    toggler[0].onclick = function() {
-                        if (clicks == 0) {
-                            document.getElementById(\"navId\").style.setProperty(\"display\", \"none\", \"important\");
-                            clicks = 1;
-                        }else {
-                            document.getElementById(\"navId\").style.setProperty(\"display\", \"flex\", \"important\");
-                            clicks = 0;
-                        }
-                    }</script>
-            </div>
-        </header>
+                </header>
+        </div>
     ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -187,7 +175,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     }
 
-    // line 58
+    // line 43
     public function block_nav($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -197,26 +185,50 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "nav"));
 
-        // line 59
-        echo "        <nav class=\"navbar lead bg-danger text-end d-flex justify-content-end\">
-            <div id=\"navId\" style=\"transition: 0.5s; z-index: 4;\">
-            <ul class=\"navbar-nav bg-warning\">
-                <li class=\"nav-item grid\">
-                    <a class=\"nav-link text-light\" href=\"/home\"><i class=\"fa-solid fa-house\"></i></a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link text-light\" href=\"/login\">Login</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link text-light\" href=\"#\">Over ons</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link text-light\" href=\"#\">Bestelling</a>
-                </li>
-            </ul>
-            </div>
-        </nav>
-    ";
+        // line 44
+        echo "            <div class=\"col-1\">
+            <nav class=\"navbar \" id=\"navId\" style=\"transition: 0.5s; z-index: 4;\">
+                    <ul class=\"navbar-nav bg-warning mt-2 w-100\">
+                        <li class=\"nav-item\">
+                            <!--  Nav up & down btn  -->
+                            <div class=\"navBtn\">
+                                <script>
+                                    let clicks = 0;
+                                </script>
+                                <button class=\"navbar-toggler bg-black\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" style=\"color: white; font-size: 50px;\">
+                                    <span id=\"navBtnId\" class=\"fa-solid fa-bars\"></span>
+                                </button>
+                                <script>
+                                    let navBtnId = document.getElementById(\"navBtnId\");
+                                    let toggler = document.getElementsByClassName(\"navbar-toggler\");
+                                    toggler[0].onclick = function() {
+                                        if (clicks == 0) {
+                                            document.getElementById(\"navId\").style.setProperty(\"display\", \"none\", \"important\");
+                                            clicks = 1;
+                                        }else {
+                                            document.getElementById(\"navId\").style.setProperty(\"display\", \"flex\", \"important\");
+                                            clicks = 0;
+                                        }
+                                    }</script>
+                            </div>
+                        </li>
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link text-light\" href=\"/home\"><i class=\"fa-solid fa-house\"></i></a>
+                        </li>
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link text-light\" href=\"/login\">Login</a>
+                        </li>
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link text-light\" href=\"#\">Over ons</a>
+                        </li>
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link text-light\" href=\"#\">Bestelling</a>
+                        </li>
+                    </ul>
+            </nav>
+        </div>
+        </div>
+        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -225,7 +237,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     }
 
-    // line 78
+    // line 88
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -235,7 +247,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 79
+        // line 89
         echo "
     ";
         
@@ -253,7 +265,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     public function getDebugInfo()
     {
-        return array (  239 => 79,  229 => 78,  201 => 59,  191 => 58,  156 => 32,  146 => 31,  135 => 21,  131 => 18,  127 => 15,  123 => 12,  121 => 11,  111 => 10,  92 => 5,  80 => 81,  77 => 78,  74 => 58,  72 => 31,  67 => 28,  65 => 23,  63 => 10,  60 => 9,  54 => 5,  48 => 1,);
+        return array (  251 => 89,  241 => 88,  189 => 44,  179 => 43,  161 => 32,  151 => 31,  140 => 21,  136 => 18,  132 => 15,  128 => 12,  126 => 11,  116 => 10,  97 => 5,  85 => 91,  83 => 88,  80 => 87,  78 => 43,  74 => 41,  72 => 31,  67 => 28,  65 => 23,  63 => 10,  60 => 9,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -287,59 +299,69 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
     #}
 </head>
 <body class=\"bg-black\">
-    <div class=\"container\">
+    <div class=\"container-fluid mt-1\">
     {% block header %}
-        <header class=\"header mb-3 bg-warning\">
-            <h2 class=\"mt-3\"><a class=\"fw-bolder text-light\" href=\"/home\">Pizziloli</a></h2>
+        <div class=\"row align-items-start\">
+            <div class=\"col-1\"></div>
+        <div class=\"col-10\">
+                <header class=\"header mb-3 bg-warning\">
+                    <h1 style=\"font-size: 75px\" class=\"mt-3\"><a class=\"fw-bolder text-light text-decoration-none\" href=\"/home\">Pizziloli</a></h1>
 
-            <!--  Nav up & down btn  -->
-            <div class=\"navBtn d-flex justify-content-end\">
-                <script>
-                    let clicks = 0;
-                </script>
-                <button class=\"navbar-toggler  bg-danger d-flex justify-content-end\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" style=\"color: white; font-size: 30px;\">
-                    <span id=\"navBtnId\" class=\"fa-solid fa-bars\"></span>
-                </button>
-                <script>
-                    let navBtnId = document.getElementById(\"navBtnId\");
-                    let toggler = document.getElementsByClassName(\"navbar-toggler\");
-                    toggler[0].onclick = function() {
-                        if (clicks == 0) {
-                            document.getElementById(\"navId\").style.setProperty(\"display\", \"none\", \"important\");
-                            clicks = 1;
-                        }else {
-                            document.getElementById(\"navId\").style.setProperty(\"display\", \"flex\", \"important\");
-                            clicks = 0;
-                        }
-                    }</script>
-            </div>
-        </header>
+                </header>
+        </div>
     {% endblock %}
-    {% block nav %}
-        <nav class=\"navbar lead bg-danger text-end d-flex justify-content-end\">
-            <div id=\"navId\" style=\"transition: 0.5s; z-index: 4;\">
-            <ul class=\"navbar-nav bg-warning\">
-                <li class=\"nav-item grid\">
-                    <a class=\"nav-link text-light\" href=\"/home\"><i class=\"fa-solid fa-house\"></i></a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link text-light\" href=\"/login\">Login</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link text-light\" href=\"#\">Over ons</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link text-light\" href=\"#\">Bestelling</a>
-                </li>
-            </ul>
-            </div>
-        </nav>
-    {% endblock %}
-    {% block body %}
+
+
+            {% block nav %}
+            <div class=\"col-1\">
+            <nav class=\"navbar \" id=\"navId\" style=\"transition: 0.5s; z-index: 4;\">
+                    <ul class=\"navbar-nav bg-warning mt-2 w-100\">
+                        <li class=\"nav-item\">
+                            <!--  Nav up & down btn  -->
+                            <div class=\"navBtn\">
+                                <script>
+                                    let clicks = 0;
+                                </script>
+                                <button class=\"navbar-toggler bg-black\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" style=\"color: white; font-size: 50px;\">
+                                    <span id=\"navBtnId\" class=\"fa-solid fa-bars\"></span>
+                                </button>
+                                <script>
+                                    let navBtnId = document.getElementById(\"navBtnId\");
+                                    let toggler = document.getElementsByClassName(\"navbar-toggler\");
+                                    toggler[0].onclick = function() {
+                                        if (clicks == 0) {
+                                            document.getElementById(\"navId\").style.setProperty(\"display\", \"none\", \"important\");
+                                            clicks = 1;
+                                        }else {
+                                            document.getElementById(\"navId\").style.setProperty(\"display\", \"flex\", \"important\");
+                                            clicks = 0;
+                                        }
+                                    }</script>
+                            </div>
+                        </li>
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link text-light\" href=\"/home\"><i class=\"fa-solid fa-house\"></i></a>
+                        </li>
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link text-light\" href=\"/login\">Login</a>
+                        </li>
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link text-light\" href=\"#\">Over ons</a>
+                        </li>
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link text-light\" href=\"#\">Bestelling</a>
+                        </li>
+                    </ul>
+            </nav>
+        </div>
+        </div>
+        {% endblock %}
+
+        {% block body %}
 
     {% endblock %}
     </div>
 </body>
-</html>", "base.html.twig", "C:\\Users\\0jian\\Documents\\pizziloli-website\\templates\\base.html.twig");
+</html>", "base.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\base.html.twig");
     }
 }
