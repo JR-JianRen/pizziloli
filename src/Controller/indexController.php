@@ -12,7 +12,6 @@ class indexController extends AbstractController
     public function number(): Response
     {
 
-
         return $this->render('index.html.twig', [
 
         ]);
