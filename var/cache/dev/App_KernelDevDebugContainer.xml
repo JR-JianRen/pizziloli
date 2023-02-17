@@ -329,6 +329,13 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\contactController" class="App\Controller\contactController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\contactController"/>
+      </call>
+    </service>
     <service id="App\Controller\indexController" class="App\Controller\indexController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -6091,6 +6098,9 @@
     <service id="framework_extra_bundle.argument_name_convertor" class="Sensio\Bundle\FrameworkExtraBundle\Request\ArgumentNameConverter">
       <argument type="service" id="argument_metadata_factory"/>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\contactController" class="App\Controller\contactController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\contactController" class="App\Controller\contactController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\contactController" class="App\Controller\contactController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\indexController" class="App\Controller\indexController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\indexController" class="App\Controller\indexController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\indexController" class="App\Controller\indexController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6856,6 +6866,12 @@
         <argument key="session" type="service_closure" id=".session.deprecated" on-invalid="ignore"/>
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\contactController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\contactController"/>
+      <argument>App\Controller\contactController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
     <service id=".service_locator.mx0UMmY.App\Controller\indexController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\indexController"/>
