@@ -106,7 +106,10 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
             </div>
 
         <div class=\"carouselImg col-md-12 col-lg-6 d-flex justify-content-center\">
-            <img class=\"carouselImg rounded img-fluid\" src=\"/img/carouselImg.jpg\" alt=\"pizzaImg\">
+            <img class=\"carouselImg rounded img-fluid\" src=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/carouselImg.jpg"), "html", null, true);
+        echo "\" alt=\"pizzaImg\">
         </div>
     </div>
     <div class=\"text-light\">
@@ -146,7 +149,10 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
                 <div class=\"col px-1\">
                     <div class=\"catoCard card\">
                         <a class=\"catoA\" href=\"#\">
-                        <img class=\"catoImg1 card-img-top\" src=\"/img/catoImg1.jpg\" alt=\"Card image\">
+                        <img class=\"catoImg1 card-img-top\" src=\"";
+        // line 48
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/catoImg1.jpg"), "html", null, true);
+        echo "\" alt=\"Card image\">
                         <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
                             <h1 class=\"card-title text-light fw-bold\">Vegatarische </h1>
                             <h1 class=\"card-title text-light fw-bold\">pizza</h1>
@@ -157,7 +163,10 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
                 <div class=\"col px-1\">
                     <div class=\"catoCard card\">
                         <a class=\"catoA\" href=\"#\">
-                        <img class=\"catoImg1 card-img-top\" src=\"/img/catoImg2.jpg\" alt=\"Card image\">
+                        <img class=\"catoImg1 card-img-top\" src=\"";
+        // line 59
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/catoImg2.jpg"), "html", null, true);
+        echo " \" alt=\"Card image\">
                         <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
                             <h1 class=\"card-title text-light fw-bold\"> Vlees pizza</h1>
                         </div>
@@ -167,7 +176,10 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
                 <div class=\"col px-1\">
                     <div class=\"catoCard card\">
                         <a class=\"catoA\" href=\"#\">
-                        <img class=\"catoImg1 card-img-top\" src=\"/img/catoImg3.jpg\" alt=\"Card image\">
+                        <img class=\"catoImg1 card-img-top\" src=\"";
+        // line 69
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/catoImg3.jpg"), "html", null, true);
+        echo "\" alt=\"Card image\">
                         <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
                             <h1 class=\"card-title text-light fw-bold\">Vis pizza</h1>
                         </div>
@@ -199,7 +211,7 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  135 => 34,  125 => 33,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  181 => 69,  168 => 59,  154 => 48,  138 => 34,  128 => 33,  111 => 26,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -229,7 +241,7 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
             </div>
 
         <div class=\"carouselImg col-md-12 col-lg-6 d-flex justify-content-center\">
-            <img class=\"carouselImg rounded img-fluid\" src=\"/img/carouselImg.jpg\" alt=\"pizzaImg\">
+            <img class=\"carouselImg rounded img-fluid\" src=\"{{ asset('/img/carouselImg.jpg')}}\" alt=\"pizzaImg\">
         </div>
     </div>
     <div class=\"text-light\">
@@ -251,7 +263,7 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
                 <div class=\"col px-1\">
                     <div class=\"catoCard card\">
                         <a class=\"catoA\" href=\"#\">
-                        <img class=\"catoImg1 card-img-top\" src=\"/img/catoImg1.jpg\" alt=\"Card image\">
+                        <img class=\"catoImg1 card-img-top\" src=\"{{ asset('/img/catoImg1.jpg') }}\" alt=\"Card image\">
                         <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
                             <h1 class=\"card-title text-light fw-bold\">Vegatarische </h1>
                             <h1 class=\"card-title text-light fw-bold\">pizza</h1>
@@ -262,7 +274,7 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
                 <div class=\"col px-1\">
                     <div class=\"catoCard card\">
                         <a class=\"catoA\" href=\"#\">
-                        <img class=\"catoImg1 card-img-top\" src=\"/img/catoImg2.jpg\" alt=\"Card image\">
+                        <img class=\"catoImg1 card-img-top\" src=\"{{ asset('/img/catoImg2.jpg') }} \" alt=\"Card image\">
                         <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
                             <h1 class=\"card-title text-light fw-bold\"> Vlees pizza</h1>
                         </div>
@@ -272,7 +284,7 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
                 <div class=\"col px-1\">
                     <div class=\"catoCard card\">
                         <a class=\"catoA\" href=\"#\">
-                        <img class=\"catoImg1 card-img-top\" src=\"/img/catoImg3.jpg\" alt=\"Card image\">
+                        <img class=\"catoImg1 card-img-top\" src=\"{{ asset('/img/catoImg3.jpg') }}\" alt=\"Card image\">
                         <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
                             <h1 class=\"card-title text-light fw-bold\">Vis pizza</h1>
                         </div>

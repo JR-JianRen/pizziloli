@@ -244,10 +244,10 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
                     <a class=\"nav-link text-light fs-3\" href=\"/login\"><i class=\"bi bi-person-fill\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-1\" href=\"#\"><i class=\"bi bi-info-lg\"></i></a>
+                    <a class=\"nav-link text-light fs-1\" href=\"/contact\"><i class=\"bi bi-info-lg\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-2\" href=\"#\"><i class=\"bi bi-box2-fill\"></i></a>
+                    <a class=\"nav-link text-light fs-2\" href=\"/bestelling\"><i class=\"bi bi-box2-fill\"></i></a>
                 </li>
             </ul>
             </nav-dropdown-items>
@@ -375,10 +375,10 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
                     <a class=\"nav-link text-light fs-3\" href=\"/login\"><i class=\"bi bi-person-fill\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-1\" href=\"#\"><i class=\"bi bi-info-lg\"></i></a>
+                    <a class=\"nav-link text-light fs-1\" href=\"/contact\"><i class=\"bi bi-info-lg\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-2\" href=\"#\"><i class=\"bi bi-box2-fill\"></i></a>
+                    <a class=\"nav-link text-light fs-2\" href=\"/bestelling\"><i class=\"bi bi-box2-fill\"></i></a>
                 </li>
             </ul>
             </nav-dropdown-items>

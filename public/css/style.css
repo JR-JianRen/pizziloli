@@ -19,8 +19,15 @@ hr{
     margin: 0;
     padding: 0;
 }
-
-
+/*
+.conImg{
+    position: absolute;
+    bottom: 30rem;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 0 32px 32px black inset;
+}
+*/
 
 @media only screen and (min-width: 600px) and (max-width: 999px) {
     .catoImg1, .catoImg2, .catoImg3{
@@ -31,12 +38,11 @@ hr{
 @media only screen and (min-width: 1000px) and (max-width: 1200px) {
     .catoImg1, .catoImg2, .catoImg3{
         height: 13rem;
-
     }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1130px) {
     .carouselImg{
-        height: 26rem;
+        height: 27rem;
     }
 }
