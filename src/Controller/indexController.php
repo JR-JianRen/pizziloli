@@ -18,12 +18,23 @@ class indexController extends AbstractController
 
         ]);
     }
+
 //Contactpage
     #[Route('/contact')]
     public function number2(): Response
     {
         
         return $this->render('contact.html.twig', [
+
+        ]);
+    }
+
+//Categorie_page
+    #[Route('/menu')]
+    public function number3(): Response
+    {
+
+        return $this->render('categorie.html.twig', [
 
         ]);
     }
