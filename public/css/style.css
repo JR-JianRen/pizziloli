@@ -10,7 +10,7 @@ body{
 .orderBtn{
     border-radius: 25px;
 }
-.catoImg1, .catoImg2, .catoImg3{
+.catoImg1, .catoImg2, .catoImg3, .productImg{
     object-fit: cover;
     opacity: 95%;
     height: 22rem;

@@ -54,7 +54,10 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-    <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+    <link rel=\"icon\" href=\"";
+        // line 6
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/favicon.png"), "html", null, true);
+        echo "\">
 
     ";
         // line 9
@@ -289,9 +292,14 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  277 => 93,  267 => 92,  211 => 44,  201 => 43,  190 => 40,  180 => 39,  166 => 34,  156 => 33,  145 => 21,  141 => 18,  137 => 15,  133 => 12,  131 => 11,  121 => 10,  102 => 5,  90 => 95,  88 => 92,  85 => 91,  83 => 43,  80 => 42,  77 => 39,  75 => 33,  68 => 28,  66 => 23,  64 => 10,  61 => 9,  55 => 5,  49 => 1,);
+        return array (  280 => 93,  270 => 92,  214 => 44,  204 => 43,  193 => 40,  183 => 39,  169 => 34,  159 => 33,  148 => 21,  144 => 18,  140 => 15,  136 => 12,  134 => 11,  124 => 10,  105 => 5,  93 => 95,  91 => 92,  88 => 91,  86 => 43,  83 => 42,  80 => 39,  78 => 33,  71 => 28,  69 => 23,  67 => 10,  64 => 9,  59 => 6,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -301,7 +309,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 <head>
     <meta charset=\"UTF-8\">
     <title>{% block title %}Welcome!{% endblock %}</title>
-    <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+    <link rel=\"icon\" href=\"{{ asset('/img/favicon.png') }}\">
 
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 

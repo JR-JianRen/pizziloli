@@ -85,8 +85,8 @@ class __TwigTemplate_7e7bf937fcebad0022b21d06be31ef14 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
-        echo " <div class=\"row\">
- <div class=\"card-group\">
+        echo " <h1 class=\"my-4 text-light fw-bolder text-center\">Vlees pizza</h1>
+ <div class=\"row\">
  ";
         // line 8
         $context['_parent'] = $context;
@@ -94,16 +94,17 @@ class __TwigTemplate_7e7bf937fcebad0022b21d06be31ef14 extends Template
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
             // line 9
             echo "
- <div class=\"col-3\">
-   <div class=\"card\">
-    <img src=\"#\" class=\"card-img-top\" alt=\"...\">
-    <div class=\"card-body\">
-     <h5 class=\"card-title\">Card title</h5>
-     <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+ <div class=\"col-3 mt-4\">
+   <div class=\"card bg-black border-0 \">
+    <a href=\"#\" class=\"text-decoration-none\">
+    <img src=\"";
+            // line 13
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/catoImg3.jpg"), "html", null, true);
+            echo "\" class=\"productImg shadow card-img-top rounded\" alt=\"...\">
+    <div class=\"card-body text-light\">
+     <h5 class=\"card-subtitle text-center fs-3\">Pizza 1</h5>
     </div>
-    <div class=\"card-footer\">
-     <small class=\"text-muted\">Last updated 3 mins ago</small>
-    </div>
+    </a>
    </div>
  </div>
  ";
@@ -111,9 +112,8 @@ class __TwigTemplate_7e7bf937fcebad0022b21d06be31ef14 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 23
+        // line 21
         echo " </div>
- </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -135,7 +135,7 @@ class __TwigTemplate_7e7bf937fcebad0022b21d06be31ef14 extends Template
 
     public function getDebugInfo()
     {
-        return array (  115 => 23,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  116 => 21,  102 => 13,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -145,24 +145,21 @@ class __TwigTemplate_7e7bf937fcebad0022b21d06be31ef14 extends Template
 {% block title %} Pizziloli menu {% endblock %}
 
 {% block content %}
+ <h1 class=\"my-4 text-light fw-bolder text-center\">Vlees pizza</h1>
  <div class=\"row\">
- <div class=\"card-group\">
  {% for product in products %}
 
- <div class=\"col-3\">
-   <div class=\"card\">
-    <img src=\"#\" class=\"card-img-top\" alt=\"...\">
-    <div class=\"card-body\">
-     <h5 class=\"card-title\">Card title</h5>
-     <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+ <div class=\"col-3 mt-4\">
+   <div class=\"card bg-black border-0 \">
+    <a href=\"#\" class=\"text-decoration-none\">
+    <img src=\"{{ asset('/img/catoImg3.jpg')}}\" class=\"productImg shadow card-img-top rounded\" alt=\"...\">
+    <div class=\"card-body text-light\">
+     <h5 class=\"card-subtitle text-center fs-3\">Pizza 1</h5>
     </div>
-    <div class=\"card-footer\">
-     <small class=\"text-muted\">Last updated 3 mins ago</small>
-    </div>
+    </a>
    </div>
  </div>
  {% endfor %}
- </div>
  </div>
 {% endblock %}", "categorie.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\categorie.html.twig");
     }

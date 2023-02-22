@@ -8,9 +8,9 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
-        '/home' => [[['_route' => 'app_index_number', '_controller' => 'App\\Controller\\indexController::number'], null, null, null, false, false, null]],
-        '/contact' => [[['_route' => 'app_index_number2', '_controller' => 'App\\Controller\\indexController::number2'], null, null, null, false, false, null]],
-        '/menu' => [[['_route' => 'app_index_number3', '_controller' => 'App\\Controller\\indexController::number3'], null, null, null, false, false, null]],
+        '/home' => [[['_route' => 'app_index_home', '_controller' => 'App\\Controller\\indexController::home'], null, null, null, false, false, null]],
+        '/contact' => [[['_route' => 'app_index_contact', '_controller' => 'App\\Controller\\indexController::contact'], null, null, null, false, false, null]],
+        '/menu' => [[['_route' => 'app_index_menu', '_controller' => 'App\\Controller\\indexController::menu'], null, null, null, false, false, null]],
         '/_profiler' => [[['_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'], null, null, null, true, false, null]],
         '/_profiler/search' => [[['_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'], null, null, null, false, false, null]],
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],

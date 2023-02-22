@@ -143,7 +143,7 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
         <div class=\"col-10\"><h3 class=\" pb-1 text-light fw-bold\">Kies uit</h3></div>
         <div class=\"col-1\"></div>
     </div>
-
+    
     <div class=\"row\">
         <div class=\"col-1\"></div>
         <div class=\"col-10\">
@@ -258,7 +258,7 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
         <div class=\"col-10\"><h3 class=\" pb-1 text-light fw-bold\">Kies uit</h3></div>
         <div class=\"col-1\"></div>
     </div>
-
+    
     <div class=\"row\">
         <div class=\"col-1\"></div>
         <div class=\"col-10\">
