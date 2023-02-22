@@ -26,6 +26,7 @@ class __TwigTemplate_7e7bf937fcebad0022b21d06be31ef14 extends Template
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'content' => [$this, 'block_content'],
         ];
     }
 
@@ -73,6 +74,55 @@ class __TwigTemplate_7e7bf937fcebad0022b21d06be31ef14 extends Template
 
     }
 
+    // line 5
+    public function block_content($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
+
+        // line 6
+        echo " <div class=\"row\">
+ <div class=\"card-group\">
+ ";
+        // line 8
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 8, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
+            // line 9
+            echo "
+ <div class=\"col-3\">
+   <div class=\"card\">
+    <img src=\"#\" class=\"card-img-top\" alt=\"...\">
+    <div class=\"card-body\">
+     <h5 class=\"card-title\">Card title</h5>
+     <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    </div>
+    <div class=\"card-footer\">
+     <small class=\"text-muted\">Last updated 3 mins ago</small>
+    </div>
+   </div>
+ </div>
+ ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 23
+        echo " </div>
+ </div>
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "categorie.html.twig";
@@ -85,7 +135,7 @@ class __TwigTemplate_7e7bf937fcebad0022b21d06be31ef14 extends Template
 
     public function getDebugInfo()
     {
-        return array (  58 => 3,  35 => 1,);
+        return array (  115 => 23,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -94,6 +144,26 @@ class __TwigTemplate_7e7bf937fcebad0022b21d06be31ef14 extends Template
 
 {% block title %} Pizziloli menu {% endblock %}
 
-", "categorie.html.twig", "C:\\Users\\0jian\\Documents\\pizziloli-website\\templates\\categorie.html.twig");
+{% block content %}
+ <div class=\"row\">
+ <div class=\"card-group\">
+ {% for product in products %}
+
+ <div class=\"col-3\">
+   <div class=\"card\">
+    <img src=\"#\" class=\"card-img-top\" alt=\"...\">
+    <div class=\"card-body\">
+     <h5 class=\"card-title\">Card title</h5>
+     <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    </div>
+    <div class=\"card-footer\">
+     <small class=\"text-muted\">Last updated 3 mins ago</small>
+    </div>
+   </div>
+ </div>
+ {% endfor %}
+ </div>
+ </div>
+{% endblock %}", "categorie.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\categorie.html.twig");
     }
 }

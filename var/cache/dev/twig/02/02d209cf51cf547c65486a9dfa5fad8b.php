@@ -298,6 +298,6 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
         </div>
         <div class=\"col-1\"></div>
     </div>
-{% endblock %}", "index.html.twig", "C:\\Users\\0jian\\Documents\\pizziloli-website\\templates\\index.html.twig");
+{% endblock %}", "index.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\index.html.twig");
     }
 }

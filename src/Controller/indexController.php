@@ -33,9 +33,9 @@ class indexController extends AbstractController
     #[Route('/menu')]
     public function number3(): Response
     {
-
+        $test = ['1','2','3','4','5','6'];
         return $this->render('categorie.html.twig', [
-
+        'products' => $test,
         ]);
     }
 }

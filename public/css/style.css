@@ -15,6 +15,11 @@ body{
     opacity: 95%;
     height: 22rem;
 }
+.productImg1{
+    object-fit: fill;
+    width: 5rem;
+    height: 22rem;
+}
 hr{
     margin: 0;
     padding: 0;
