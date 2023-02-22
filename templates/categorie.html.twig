@@ -5,6 +5,7 @@
 {% block content %}
  <h1 class="my-4 text-light fw-bolder text-center">Vlees pizza</h1>
  <div class="row">
+
  {% for product in products %}
 
  <div class="col-3 mt-4">
@@ -12,7 +13,7 @@
     <a href="#" class="text-decoration-none">
     <img src="{{ asset('/img/catoImg3.jpg')}}" class="productImg shadow card-img-top rounded" alt="...">
     <div class="card-body text-light">
-     <h5 class="card-subtitle text-center fs-3">Pizza 1</h5>
+     <h5 class="card-subtitle text-center fs-3">pizza {#{{ product.name }}#}</h5>
     </div>
     </a>
    </div>

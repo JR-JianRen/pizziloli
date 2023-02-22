@@ -13,14 +13,14 @@
             <br>
             <p class="text-light">
                 Wij hebben 17.000  winkels over de hele wereld. Alleen al in Nederland  maken wij ieder
-                jaar 20 miljoen pizza's. Al onze pizza's worden vers gemaakt, direct nadat je bestelling
+                jaar 20 miljoen pizza's. Al onze pizza's worden vers gemaakt door Gordan Freeman, direct nadat je bestelling
                 plaats.
             </p>
             <br><br>
-            <orderbtn class="d-flex justify-content-start my-4">
+            <div class="orderBtn d-flex justify-content-start my-4">
 {#                <button class="orderBtn w-75 py-4">Bestellen</button>#}
                 <a href="/menu" class="w-75"><button class="orderBtn w-100 py-4">Bestellen</button></a>
-            </orderbtn>
+            </div>
             </div>
 
         <div class="carouselImg col-md-12 col-lg-6 d-flex justify-content-center">
@@ -33,50 +33,28 @@
 {% endblock %}
 {% block content2 %}
 
-    {% for categorie in categories %}
-
-    {% endfor %}
-
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10"><h3 class=" pb-1 text-light fw-bold">Kies uit</h3></div>
         <div class="col-1"></div>
     </div>
+
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
             <div class="row gap-5 d-flex justify-content-between">
-                <div class="col px-1">
-                    <div class="catoCard card">
-                        <a class="catoA" href="/menu">
-                        <img class="catoImg1 card-img-top" src="{{ asset('/img/catoImg1.jpg') }}" alt="Card image">
-                        <div class="card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center">
-                            <h1 class="card-title text-light fw-bold">Vegatarische </h1>
-                            <h1 class="card-title text-light fw-bold">pizza</h1>
+                {% for categorie in categories %}
+                    <div class="col px-1">
+                        <div class="catoCard card">
+                            <a class="catoA" href="{{ path('app_menu', {id:categorie.id}) }}">
+                                <img class="catoImg1 card-img-top" src='{{ asset(categorie.picture) }}' alt="Card image">
+                                <div class="card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center">
+                                    <h1 class="card-title text-light fw-bold text-break">{{ categorie.name }} pizza</h1>
+                                </div>
+                            </a>
                         </div>
-                        </a>
                     </div>
-                </div>
-                <div class="col px-1">
-                    <div class="catoCard card">
-                        <a class="catoA" href="/menu">
-                        <img class="catoImg1 card-img-top" src="{{ asset('/img/catoImg2.jpg') }} " alt="Card image">
-                        <div class="card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center">
-                            <h1 class="card-title text-light fw-bold"> Vlees pizza</h1>
-                        </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col px-1">
-                    <div class="catoCard card">
-                        <a class="catoA" href="/menu">
-                        <img class="catoImg1 card-img-top" src="{{ asset('/img/catoImg3.jpg') }}" alt="Card image">
-                        <div class="card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center">
-                            <h1 class="card-title text-light fw-bold">Vis pizza</h1>
-                        </div>
-                        </a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <div class="col-1"></div>

@@ -5,7 +5,7 @@
 return [
     'app_index_home' => [[], ['_controller' => 'App\\Controller\\indexController::home'], [], [['text', '/home']], [], [], []],
     'app_index_contact' => [[], ['_controller' => 'App\\Controller\\indexController::contact'], [], [['text', '/contact']], [], [], []],
-    'app_index_menu' => [[], ['_controller' => 'App\\Controller\\indexController::menu'], [], [['text', '/menu']], [], [], []],
+    'app_menu' => [[], ['_controller' => 'App\\Controller\\indexController::menu'], [], [['text', '/menu']], [], [], []],
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
     '_wdt' => [['token'], ['_controller' => 'web_profiler.controller.profiler::toolbarAction'], [], [['variable', '/', '[^/]++', 'token', true], ['text', '/_wdt']], [], [], []],
     '_profiler_home' => [[], ['_controller' => 'web_profiler.controller.profiler::homeAction'], [], [['text', '/_profiler/']], [], [], []],

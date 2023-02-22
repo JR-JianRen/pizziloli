@@ -87,22 +87,25 @@ class __TwigTemplate_7e7bf937fcebad0022b21d06be31ef14 extends Template
         // line 6
         echo " <h1 class=\"my-4 text-light fw-bolder text-center\">Vlees pizza</h1>
  <div class=\"row\">
+
  ";
-        // line 8
+        // line 9
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 8, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 9, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 9
+            // line 10
             echo "
  <div class=\"col-3 mt-4\">
    <div class=\"card bg-black border-0 \">
     <a href=\"#\" class=\"text-decoration-none\">
     <img src=\"";
-            // line 13
+            // line 14
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/catoImg3.jpg"), "html", null, true);
             echo "\" class=\"productImg shadow card-img-top rounded\" alt=\"...\">
     <div class=\"card-body text-light\">
-     <h5 class=\"card-subtitle text-center fs-3\">Pizza 1</h5>
+     <h5 class=\"card-subtitle text-center fs-3\">pizza ";
+            // line 16
+            echo "</h5>
     </div>
     </a>
    </div>
@@ -112,7 +115,7 @@ class __TwigTemplate_7e7bf937fcebad0022b21d06be31ef14 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 21
+        // line 22
         echo " </div>
 ";
         
@@ -135,7 +138,7 @@ class __TwigTemplate_7e7bf937fcebad0022b21d06be31ef14 extends Template
 
     public function getDebugInfo()
     {
-        return array (  116 => 21,  102 => 13,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  119 => 22,  108 => 16,  103 => 14,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -147,6 +150,7 @@ class __TwigTemplate_7e7bf937fcebad0022b21d06be31ef14 extends Template
 {% block content %}
  <h1 class=\"my-4 text-light fw-bolder text-center\">Vlees pizza</h1>
  <div class=\"row\">
+
  {% for product in products %}
 
  <div class=\"col-3 mt-4\">
@@ -154,7 +158,7 @@ class __TwigTemplate_7e7bf937fcebad0022b21d06be31ef14 extends Template
     <a href=\"#\" class=\"text-decoration-none\">
     <img src=\"{{ asset('/img/catoImg3.jpg')}}\" class=\"productImg shadow card-img-top rounded\" alt=\"...\">
     <div class=\"card-body text-light\">
-     <h5 class=\"card-subtitle text-center fs-3\">Pizza 1</h5>
+     <h5 class=\"card-subtitle text-center fs-3\">pizza {#{{ product.name }}#}</h5>
     </div>
     </a>
    </div>

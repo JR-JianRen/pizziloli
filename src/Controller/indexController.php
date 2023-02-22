@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\CategoryRepository;
+use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -33,10 +34,10 @@ class indexController extends AbstractController
     }
 
 //Categorie_page
-    #[Route('/menu')]
-    public function menu(): Response
+    #[Route('/menu', name: 'app_menu')]
+    public function menu(ProductRepository $productRepository): Response
     {
-
+//        $products = $productRepository->findBy();
         $test = ['1','2','3','4','5','6'];
         return $this->render('categorie.html.twig', [
         'products' => $test,

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 22 feb 2023 om 12:45
+-- Gegenereerd op: 22 feb 2023 om 15:20
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -38,9 +38,9 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `picture`) VALUES
-(1, 'vegetarisch', NULL),
-(2, 'Vlees', NULL),
-(3, 'vis', NULL);
+(1, 'Vegetarisch', '/img/catoImg1.jpg'),
+(2, 'Vlees', '/img/catoImg2.jpg'),
+(3, 'Vis', '/img/catoImg3.jpg');
 
 -- --------------------------------------------------------
 

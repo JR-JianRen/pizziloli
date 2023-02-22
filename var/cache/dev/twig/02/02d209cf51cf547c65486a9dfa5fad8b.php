@@ -96,15 +96,15 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
             <br>
             <p class=\"text-light\">
                 Wij hebben 17.000  winkels over de hele wereld. Alleen al in Nederland  maken wij ieder
-                jaar 20 miljoen pizza's. Al onze pizza's worden vers gemaakt, direct nadat je bestelling
+                jaar 20 miljoen pizza's. Al onze pizza's worden vers gemaakt door Gordan Freeman, direct nadat je bestelling
                 plaats.
             </p>
             <br><br>
-            <orderbtn class=\"d-flex justify-content-start my-4\">
+            <div class=\"orderBtn d-flex justify-content-start my-4\">
 ";
         // line 22
         echo "                <a href=\"/menu\" class=\"w-75\"><button class=\"orderBtn w-100 py-4\">Bestellen</button></a>
-            </orderbtn>
+            </div>
             </div>
 
         <div class=\"carouselImg col-md-12 col-lg-6 d-flex justify-content-center\">
@@ -143,52 +143,43 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
         <div class=\"col-10\"><h3 class=\" pb-1 text-light fw-bold\">Kies uit</h3></div>
         <div class=\"col-1\"></div>
     </div>
-    
+
     <div class=\"row\">
         <div class=\"col-1\"></div>
         <div class=\"col-10\">
             <div class=\"row gap-5 d-flex justify-content-between\">
-                <div class=\"col px-1\">
-                    <div class=\"catoCard card\">
-                        <a class=\"catoA\" href=\"/menu\">
-                        <img class=\"catoImg1 card-img-top\" src=\"";
-        // line 49
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/catoImg1.jpg"), "html", null, true);
-        echo "\" alt=\"Card image\">
-                        <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
-                            <h1 class=\"card-title text-light fw-bold\">Vegatarische </h1>
-                            <h1 class=\"card-title text-light fw-bold\">pizza</h1>
+                ";
+        // line 46
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 46, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["categorie"]) {
+            // line 47
+            echo "                    <div class=\"col px-1\">
+                        <div class=\"catoCard card\">
+                            <a class=\"catoA\" href=\"";
+            // line 49
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_menu", ["id" => twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 49)]), "html", null, true);
+            echo "\">
+                                <img class=\"catoImg1 card-img-top\" src='";
+            // line 50
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, $context["categorie"], "picture", [], "any", false, false, false, 50)), "html", null, true);
+            echo "' alt=\"Card image\">
+                                <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
+                                    <h1 class=\"card-title text-light fw-bold text-break\">";
+            // line 52
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "name", [], "any", false, false, false, 52), "html", null, true);
+            echo " pizza</h1>
+                                </div>
+                            </a>
                         </div>
-                        </a>
                     </div>
-                </div>
-                <div class=\"col px-1\">
-                    <div class=\"catoCard card\">
-                        <a class=\"catoA\" href=\"/menu\">
-                        <img class=\"catoImg1 card-img-top\" src=\"";
-        // line 60
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/catoImg2.jpg"), "html", null, true);
-        echo " \" alt=\"Card image\">
-                        <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
-                            <h1 class=\"card-title text-light fw-bold\"> Vlees pizza</h1>
-                        </div>
-                        </a>
-                    </div>
-                </div>
-                <div class=\"col px-1\">
-                    <div class=\"catoCard card\">
-                        <a class=\"catoA\" href=\"/menu\">
-                        <img class=\"catoImg1 card-img-top\" src=\"";
-        // line 70
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/catoImg3.jpg"), "html", null, true);
-        echo "\" alt=\"Card image\">
-                        <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
-                            <h1 class=\"card-title text-light fw-bold\">Vis pizza</h1>
-                        </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['categorie'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 58
+        echo "            </div>
         </div>
         <div class=\"col-1\"></div>
     </div>
@@ -213,7 +204,7 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  183 => 70,  170 => 60,  156 => 49,  140 => 35,  130 => 34,  113 => 27,  106 => 22,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  182 => 58,  170 => 52,  165 => 50,  161 => 49,  157 => 47,  153 => 46,  140 => 35,  130 => 34,  113 => 27,  106 => 22,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -233,14 +224,14 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
             <br>
             <p class=\"text-light\">
                 Wij hebben 17.000  winkels over de hele wereld. Alleen al in Nederland  maken wij ieder
-                jaar 20 miljoen pizza's. Al onze pizza's worden vers gemaakt, direct nadat je bestelling
+                jaar 20 miljoen pizza's. Al onze pizza's worden vers gemaakt door Gordan Freeman, direct nadat je bestelling
                 plaats.
             </p>
             <br><br>
-            <orderbtn class=\"d-flex justify-content-start my-4\">
+            <div class=\"orderBtn d-flex justify-content-start my-4\">
 {#                <button class=\"orderBtn w-75 py-4\">Bestellen</button>#}
                 <a href=\"/menu\" class=\"w-75\"><button class=\"orderBtn w-100 py-4\">Bestellen</button></a>
-            </orderbtn>
+            </div>
             </div>
 
         <div class=\"carouselImg col-md-12 col-lg-6 d-flex justify-content-center\">
@@ -258,42 +249,23 @@ class __TwigTemplate_d1b0f67ee427839780be007056bbf6f4 extends Template
         <div class=\"col-10\"><h3 class=\" pb-1 text-light fw-bold\">Kies uit</h3></div>
         <div class=\"col-1\"></div>
     </div>
-    
+
     <div class=\"row\">
         <div class=\"col-1\"></div>
         <div class=\"col-10\">
             <div class=\"row gap-5 d-flex justify-content-between\">
-                <div class=\"col px-1\">
-                    <div class=\"catoCard card\">
-                        <a class=\"catoA\" href=\"/menu\">
-                        <img class=\"catoImg1 card-img-top\" src=\"{{ asset('/img/catoImg1.jpg') }}\" alt=\"Card image\">
-                        <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
-                            <h1 class=\"card-title text-light fw-bold\">Vegatarische </h1>
-                            <h1 class=\"card-title text-light fw-bold\">pizza</h1>
+                {% for categorie in categories %}
+                    <div class=\"col px-1\">
+                        <div class=\"catoCard card\">
+                            <a class=\"catoA\" href=\"{{ path('app_menu', {id:categorie.id}) }}\">
+                                <img class=\"catoImg1 card-img-top\" src='{{ asset(categorie.picture) }}' alt=\"Card image\">
+                                <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
+                                    <h1 class=\"card-title text-light fw-bold text-break\">{{ categorie.name }} pizza</h1>
+                                </div>
+                            </a>
                         </div>
-                        </a>
                     </div>
-                </div>
-                <div class=\"col px-1\">
-                    <div class=\"catoCard card\">
-                        <a class=\"catoA\" href=\"/menu\">
-                        <img class=\"catoImg1 card-img-top\" src=\"{{ asset('/img/catoImg2.jpg') }} \" alt=\"Card image\">
-                        <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
-                            <h1 class=\"card-title text-light fw-bold\"> Vlees pizza</h1>
-                        </div>
-                        </a>
-                    </div>
-                </div>
-                <div class=\"col px-1\">
-                    <div class=\"catoCard card\">
-                        <a class=\"catoA\" href=\"/menu\">
-                        <img class=\"catoImg1 card-img-top\" src=\"{{ asset('/img/catoImg3.jpg') }}\" alt=\"Card image\">
-                        <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
-                            <h1 class=\"card-title text-light fw-bold\">Vis pizza</h1>
-                        </div>
-                        </a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <div class=\"col-1\"></div>
