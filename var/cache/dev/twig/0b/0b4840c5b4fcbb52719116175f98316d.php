@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* base.html.twig */
+/* /base.html.twig */
 class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 {
     private $source;
@@ -40,10 +40,10 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/base.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -133,7 +133,9 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         // line 11
         echo "        ";
         // line 12
-        echo "        <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/style.css\">
+        echo "        <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/css/style.css"), "html", null, true);
+        echo "\">
 
         ";
         // line 15
@@ -289,7 +291,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     public function getTemplateName()
     {
-        return "base.html.twig";
+        return "/base.html.twig";
     }
 
     public function isTraitable()
@@ -299,7 +301,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     public function getDebugInfo()
     {
-        return array (  280 => 93,  270 => 92,  214 => 44,  204 => 43,  193 => 40,  183 => 39,  169 => 34,  159 => 33,  148 => 21,  144 => 18,  140 => 15,  136 => 12,  134 => 11,  124 => 10,  105 => 5,  93 => 95,  91 => 92,  88 => 91,  86 => 43,  83 => 42,  80 => 39,  78 => 33,  71 => 28,  69 => 23,  67 => 10,  64 => 9,  59 => 6,  55 => 5,  49 => 1,);
+        return array (  282 => 93,  272 => 92,  216 => 44,  206 => 43,  195 => 40,  185 => 39,  171 => 34,  161 => 33,  150 => 21,  146 => 18,  142 => 15,  136 => 12,  134 => 11,  124 => 10,  105 => 5,  93 => 95,  91 => 92,  88 => 91,  86 => 43,  83 => 42,  80 => 39,  78 => 33,  71 => 28,  69 => 23,  67 => 10,  64 => 9,  59 => 6,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -315,7 +317,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     {% block stylesheets %}
         {# CSS link: #}
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/style.css\">
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('/css/style.css')}}\">
 
         {# Bootstrap CSS link: #}
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD\" crossorigin=\"anonymous\">
@@ -400,6 +402,6 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
     {% endblock %}
 </div>
 </body>
-</html>", "base.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\base.html.twig");
+</html>", "/base.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\base.html.twig");
     }
 }

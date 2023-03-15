@@ -1,0 +1,26 @@
+{% extends '/base.html.twig' %}
+
+{% block title %} Pizziloli menu {% endblock %}
+
+{% block content %}
+
+
+ <h1 class="my-4 text-light fw-bolder text-center">{{ category.name }} pizza</h1>
+
+ <div class="row">
+
+ {% for product in products %}
+
+ <div class="col-3 mt-4">
+   <div class="card bg-black border-0 ">
+    <a href="  " class="text-decoration-none">
+    <img src="{{ asset('/img/catoImg3.jpg')}}" class="productImg shadow card-img-top rounded" alt="...">
+    <div class="card-body text-light">
+     <h5 class="card-subtitle text-center fs-3">{{ product.name }}</h5>
+    </div>
+    </a>
+   </div>
+ </div>
+ {% endfor %}
+ </div>
+{% endblock %}
