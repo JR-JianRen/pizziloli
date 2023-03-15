@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 09 mrt 2023 om 14:30
+-- Gegenereerd op: 15 mrt 2023 om 13:01
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -122,6 +122,14 @@ CREATE TABLE `product` (
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `price`, `picture`, `category_id`) VALUES
+(1, 'Pepperoni pizza', '6.00', NULL, 2),
+(3, 'Champion pizza', '13.99', NULL, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -218,7 +226,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT voor een tabel `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
