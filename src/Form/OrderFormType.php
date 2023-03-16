@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Order;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,11 +15,11 @@ class OrderFormType extends AbstractType
         $builder
             ->add('name')
             ->add('address')
-            ->add('order_status')
-            ->add('total_price')
-            ->add('date')
-            ->add('time')
-            ->add('save', SubmitType::class)
+//            ->add('order_status')
+//            ->add('total_price')
+//            ->add('date')
+//            ->add('time')
+            ->add('Bestellen', SubmitType::class)
         ;
     }
 

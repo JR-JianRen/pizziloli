@@ -243,13 +243,19 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
             <nav-dropdown-items id=\"navId\">
             <ul class=\"navbar-nav text-center mt-2 w-100\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-3\" href=\"/home\"><i class=\"fa-solid fa-house\"></i></a>
+                    <a class=\"nav-link text-light fs-3\" href=\"";
+        // line 74
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\"><i class=\"fa-solid fa-house\"></i></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link text-light fs-3\" href=\"/login\"><i class=\"bi bi-person-fill\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-1\" href=\"/contact\"><i class=\"bi bi-info-lg\"></i></a>
+                    <a class=\"nav-link text-light fs-1\" href=\"";
+        // line 80
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact");
+        echo "\"><i class=\"bi bi-info-lg\"></i></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link text-light fs-2\" href=\"/bestelling\"><i class=\"bi bi-box2-fill\"></i></a>
@@ -301,7 +307,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     public function getDebugInfo()
     {
-        return array (  282 => 93,  272 => 92,  216 => 44,  206 => 43,  195 => 40,  185 => 39,  171 => 34,  161 => 33,  150 => 21,  146 => 18,  142 => 15,  136 => 12,  134 => 11,  124 => 10,  105 => 5,  93 => 95,  91 => 92,  88 => 91,  86 => 43,  83 => 42,  80 => 39,  78 => 33,  71 => 28,  69 => 23,  67 => 10,  64 => 9,  59 => 6,  55 => 5,  49 => 1,);
+        return array (  288 => 93,  278 => 92,  257 => 80,  248 => 74,  216 => 44,  206 => 43,  195 => 40,  185 => 39,  171 => 34,  161 => 33,  150 => 21,  146 => 18,  142 => 15,  136 => 12,  134 => 11,  124 => 10,  105 => 5,  93 => 95,  91 => 92,  88 => 91,  86 => 43,  83 => 42,  80 => 39,  78 => 33,  71 => 28,  69 => 23,  67 => 10,  64 => 9,  59 => 6,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -379,13 +385,13 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
             <nav-dropdown-items id=\"navId\">
             <ul class=\"navbar-nav text-center mt-2 w-100\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-3\" href=\"/home\"><i class=\"fa-solid fa-house\"></i></a>
+                    <a class=\"nav-link text-light fs-3\" href=\"{{ path('app_home') }}\"><i class=\"fa-solid fa-house\"></i></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link text-light fs-3\" href=\"/login\"><i class=\"bi bi-person-fill\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-1\" href=\"/contact\"><i class=\"bi bi-info-lg\"></i></a>
+                    <a class=\"nav-link text-light fs-1\" href=\"{{ path('app_contact') }}\"><i class=\"bi bi-info-lg\"></i></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link text-light fs-2\" href=\"/bestelling\"><i class=\"bi bi-box2-fill\"></i></a>
