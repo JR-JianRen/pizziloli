@@ -91,17 +91,7 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
     <div class=\"row\">
         <div class=\"col-6\">
             <p>
-                Naam:
-                ";
-        // line 13
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), "name", [], "any", false, false, false, 13), 'form');
-        echo "
-                <br>
-                Adrres:
-                ";
-        // line 16
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), "address", [], "any", false, false, false, 16), 'form');
-        echo "
+
                 <br>
                 Datum:
 
@@ -110,8 +100,8 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
 
                 <br><br>
                 ";
-        // line 24
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), 'form');
+        // line 20
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), 'form');
         echo "
 
             </p>
@@ -152,7 +142,7 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
 
     public function getDebugInfo()
     {
-        return array (  114 => 24,  103 => 16,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  104 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -168,11 +158,7 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
     <div class=\"row\">
         <div class=\"col-6\">
             <p>
-                Naam:
-                {{ form(form.name) }}
-                <br>
-                Adrres:
-                {{ form(form.address) }}
+
                 <br>
                 Datum:
 

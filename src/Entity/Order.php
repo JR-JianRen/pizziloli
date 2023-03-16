@@ -21,7 +21,7 @@ class Order
     #[ORM\Column(length: 255)]
     private ?string $address = null;
 
-    #[ORM\Column]
+    #[ORM\Column (type: Types::INTEGER, nullable: true)]
     private ?int $order_status = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 12, scale: 2, nullable: true)]
