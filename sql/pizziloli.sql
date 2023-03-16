@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 22 feb 2023 om 15:20
+-- Gegenereerd op: 15 mrt 2023 om 13:01
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `pizziloli`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `amount`
+--
+
+CREATE TABLE `amount` (
+  `id` int(11) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `order_id_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -59,7 +72,9 @@ CREATE TABLE `doctrine_migration_versions` (
 --
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
-('DoctrineMigrations\\Version20230222112246', '2023-02-22 12:23:02', 601);
+('DoctrineMigrations\\Version20230222112246', '2023-02-22 12:23:02', 601),
+('DoctrineMigrations\\Version20230309130741', '2023-03-09 14:07:46', 690),
+('DoctrineMigrations\\Version20230309132914', '2023-03-09 14:29:23', 410);
 
 -- --------------------------------------------------------
 
@@ -87,7 +102,7 @@ CREATE TABLE `order` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `placed_order` tinyint(1) NOT NULL,
+  `order_status` int(11) NOT NULL,
   `total_price` decimal(12,2) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL
@@ -103,16 +118,17 @@ CREATE TABLE `product` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` decimal(4,2) NOT NULL,
-  `picture` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `picture` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `price`, `picture`) VALUES
-(1, 'margherita ', '15.00', ''),
-(2, 'pepperoni', '15.00', NULL);
+INSERT INTO `product` (`id`, `name`, `price`, `picture`, `category_id`) VALUES
+(1, 'Pepperoni pizza', '6.00', NULL, 2),
+(3, 'Champion pizza', '13.99', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -127,15 +143,16 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `user`
---
-
-INSERT INTO `user` (`id`, `username`, `password`) VALUES
-(1, 'Pizzilolis', '123');
-
---
 -- Indexen voor geëxporteerde tabellen
 --
+
+--
+-- Indexen voor tabel `amount`
+--
+ALTER TABLE `amount`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_8EA170424584665A` (`product_id`),
+  ADD KEY `IDX_8EA17042FCDAEAAA` (`order_id_id`);
 
 --
 -- Indexen voor tabel `category`
@@ -168,7 +185,8 @@ ALTER TABLE `order`
 -- Indexen voor tabel `product`
 --
 ALTER TABLE `product`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_D34A04AD12469DE2` (`category_id`);
 
 --
 -- Indexen voor tabel `user`
@@ -181,10 +199,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT voor een tabel `amount`
+--
+ALTER TABLE `amount`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT voor een tabel `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT voor een tabel `messenger_messages`
@@ -202,13 +226,30 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT voor een tabel `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Beperkingen voor geëxporteerde tabellen
+--
+
+--
+-- Beperkingen voor tabel `amount`
+--
+ALTER TABLE `amount`
+  ADD CONSTRAINT `FK_8EA170424584665A` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  ADD CONSTRAINT `FK_8EA17042FCDAEAAA` FOREIGN KEY (`order_id_id`) REFERENCES `order` (`id`);
+
+--
+-- Beperkingen voor tabel `product`
+--
+ALTER TABLE `product`
+  ADD CONSTRAINT `FK_D34A04AD12469DE2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

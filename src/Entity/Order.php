@@ -22,7 +22,7 @@ class Order
     private ?string $address = null;
 
     #[ORM\Column]
-    private ?bool $placed_order = null;
+    private ?int $order_status = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 12, scale: 2, nullable: true)]
     private ?string $total_price = null;
@@ -62,14 +62,14 @@ class Order
         return $this;
     }
 
-    public function isPlacedOrder(): ?bool
+    public function getOrderStatus(): ?int
     {
-        return $this->placed_order;
+        return $this->order_status;
     }
 
-    public function setPlacedOrder(bool $placed_order): self
+    public function setOrderStatus(int $order_status): self
     {
-        $this->placed_order = $placed_order;
+        $this->order_status = $order_status;
 
         return $this;
     }
