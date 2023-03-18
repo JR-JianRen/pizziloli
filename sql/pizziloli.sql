@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 15 mrt 2023 om 13:01
--- Serverversie: 10.4.24-MariaDB
--- PHP-versie: 8.1.6
+-- Generation Time: Mar 19, 2023 at 12:30 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,24 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `pizziloli`
 --
+CREATE DATABASE IF NOT EXISTS `pizziloli` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `pizziloli`;
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `amount`
+-- Table structure for table `amount`
 --
 
 CREATE TABLE `amount` (
   `id` int(11) NOT NULL,
   `amount` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `order_id_id` int(11) NOT NULL
+  `order_id_id` int(11) NOT NULL,
+  `size` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -47,7 +50,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `picture`) VALUES
@@ -58,7 +61,7 @@ INSERT INTO `category` (`id`, `name`, `picture`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `doctrine_migration_versions`
+-- Table structure for table `doctrine_migration_versions`
 --
 
 CREATE TABLE `doctrine_migration_versions` (
@@ -68,18 +71,19 @@ CREATE TABLE `doctrine_migration_versions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `doctrine_migration_versions`
+-- Dumping data for table `doctrine_migration_versions`
 --
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
 ('DoctrineMigrations\\Version20230222112246', '2023-02-22 12:23:02', 601),
 ('DoctrineMigrations\\Version20230309130741', '2023-03-09 14:07:46', 690),
-('DoctrineMigrations\\Version20230309132914', '2023-03-09 14:29:23', 410);
+('DoctrineMigrations\\Version20230309132914', '2023-03-09 14:29:23', 410),
+('DoctrineMigrations\\Version20230318201242', '2023-03-18 21:12:56', 1650);
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `messenger_messages`
+-- Table structure for table `messenger_messages`
 --
 
 CREATE TABLE `messenger_messages` (
@@ -95,23 +99,30 @@ CREATE TABLE `messenger_messages` (
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `order`
+-- Table structure for table `order`
 --
 
 CREATE TABLE `order` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `order_status` int(11) NOT NULL,
+  `order_status` int(11) DEFAULT NULL,
   `total_price` decimal(12,2) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`id`, `name`, `address`, `order_status`, `total_price`, `date`, `time`) VALUES
+(1, 'ertert', 'ertert', 1, NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -123,17 +134,17 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `name`, `price`, `picture`, `category_id`) VALUES
-(1, 'Pepperoni pizza', '6.00', NULL, 2),
-(3, 'Champion pizza', '13.99', NULL, 1);
+(1, 'Pepperoni pizza', '12.99', '/img/catoImg3.jpg', 2),
+(3, 'Champion pizza', '13.99', '/img/catoImg3.jpg', 1);
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -143,11 +154,11 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Indexen voor geëxporteerde tabellen
+-- Indexes for dumped tables
 --
 
 --
--- Indexen voor tabel `amount`
+-- Indexes for table `amount`
 --
 ALTER TABLE `amount`
   ADD PRIMARY KEY (`id`),
@@ -155,19 +166,19 @@ ALTER TABLE `amount`
   ADD KEY `IDX_8EA17042FCDAEAAA` (`order_id_id`);
 
 --
--- Indexen voor tabel `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexen voor tabel `doctrine_migration_versions`
+-- Indexes for table `doctrine_migration_versions`
 --
 ALTER TABLE `doctrine_migration_versions`
   ADD PRIMARY KEY (`version`);
 
 --
--- Indexen voor tabel `messenger_messages`
+-- Indexes for table `messenger_messages`
 --
 ALTER TABLE `messenger_messages`
   ADD PRIMARY KEY (`id`),
@@ -176,77 +187,77 @@ ALTER TABLE `messenger_messages`
   ADD KEY `IDX_75EA56E016BA31DB` (`delivered_at`);
 
 --
--- Indexen voor tabel `order`
+-- Indexes for table `order`
 --
 ALTER TABLE `order`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexen voor tabel `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `IDX_D34A04AD12469DE2` (`category_id`);
 
 --
--- Indexen voor tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT voor geëxporteerde tabellen
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT voor een tabel `amount`
+-- AUTO_INCREMENT for table `amount`
 --
 ALTER TABLE `amount`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT voor een tabel `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT voor een tabel `messenger_messages`
+-- AUTO_INCREMENT for table `messenger_messages`
 --
 ALTER TABLE `messenger_messages`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT voor een tabel `order`
+-- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT voor een tabel `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT voor een tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Beperkingen voor geëxporteerde tabellen
+-- Constraints for dumped tables
 --
 
 --
--- Beperkingen voor tabel `amount`
+-- Constraints for table `amount`
 --
 ALTER TABLE `amount`
   ADD CONSTRAINT `FK_8EA170424584665A` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
   ADD CONSTRAINT `FK_8EA17042FCDAEAAA` FOREIGN KEY (`order_id_id`) REFERENCES `order` (`id`);
 
 --
--- Beperkingen voor tabel `product`
+-- Constraints for table `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `FK_D34A04AD12469DE2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);

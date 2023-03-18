@@ -24,6 +24,9 @@ class Amount
     #[ORM\JoinColumn(nullable: false)]
     private ?Order $orderId = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $size = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -61,6 +64,18 @@ class Amount
     public function setOrderId(?Order $orderId): self
     {
         $this->orderId = $orderId;
+
+        return $this;
+    }
+
+    public function getSize(): ?string
+    {
+        return $this->size;
+    }
+
+    public function setSize(string $size): self
+    {
+        $this->size = $size;
 
         return $this;
     }

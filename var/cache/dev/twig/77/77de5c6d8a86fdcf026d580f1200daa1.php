@@ -103,7 +103,9 @@ class __TwigTemplate_4cb725b4d47d7d272a2b126a1c5ddf87 extends Template
             <div class=\"orderBtn d-flex justify-content-start my-4\">
 ";
         // line 22
-        echo "                <a href=\"/menu\" class=\"w-75\"><button class=\"orderBtn w-100 py-4\">Bestellen</button></a>
+        echo "                <a href=\"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_menuAll");
+        echo "\" class=\"w-75\"><button class=\"orderBtn w-100 py-4\">Bestellen</button></a>
             </div>
             </div>
 
@@ -204,7 +206,7 @@ class __TwigTemplate_4cb725b4d47d7d272a2b126a1c5ddf87 extends Template
 
     public function getDebugInfo()
     {
-        return array (  182 => 58,  170 => 52,  165 => 50,  161 => 49,  157 => 47,  153 => 46,  140 => 35,  130 => 34,  113 => 27,  106 => 22,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  184 => 58,  172 => 52,  167 => 50,  163 => 49,  159 => 47,  155 => 46,  142 => 35,  132 => 34,  115 => 27,  106 => 22,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -230,7 +232,7 @@ class __TwigTemplate_4cb725b4d47d7d272a2b126a1c5ddf87 extends Template
             <br><br>
             <div class=\"orderBtn d-flex justify-content-start my-4\">
 {#                <button class=\"orderBtn w-75 py-4\">Bestellen</button>#}
-                <a href=\"/menu\" class=\"w-75\"><button class=\"orderBtn w-100 py-4\">Bestellen</button></a>
+                <a href=\"{{  path('app_menuAll') }}\" class=\"w-75\"><button class=\"orderBtn w-100 py-4\">Bestellen</button></a>
             </div>
             </div>
 
@@ -270,6 +272,6 @@ class __TwigTemplate_4cb725b4d47d7d272a2b126a1c5ddf87 extends Template
         </div>
         <div class=\"col-1\"></div>
     </div>
-{% endblock %}", "index/index.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\index\\index.html.twig");
+{% endblock %}", "index/index.html.twig", "C:\\Users\\0jian\\Documents\\Education\\Github\\pizziloli-website\\templates\\index\\index.html.twig");
     }
 }

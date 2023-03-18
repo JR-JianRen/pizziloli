@@ -21,7 +21,7 @@ class AmountRepository extends ServiceEntityRepository
         parent::__construct($registry, Amount::class);
     }
 
-    public function save(Amount $entity, bool $flush = false): void
+    public function save(Amount $entity, bool $flush = true): void
     {
         $this->getEntityManager()->persist($entity);
 

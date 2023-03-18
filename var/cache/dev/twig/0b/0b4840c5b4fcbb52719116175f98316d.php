@@ -133,9 +133,9 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         // line 11
         echo "        ";
         // line 12
-        echo "        <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        echo "        <link href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/css/style.css"), "html", null, true);
-        echo "\">
+        echo "\" rel=\"stylesheet\" type=\"text/css\"/>
 
         ";
         // line 15
@@ -260,7 +260,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
                 <li class=\"nav-item\">
                     <a class=\"nav-link text-light fs-2\" href=\"";
         // line 83
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_orderForm");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_orderView");
         echo "\"><i class=\"bi bi-box2-fill\"></i></a>
                 </li>
             </ul>
@@ -326,7 +326,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     {% block stylesheets %}
         {# CSS link: #}
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('/css/style.css')}}\">
+        <link href=\"{{ asset('/css/style.css') }}\" rel=\"stylesheet\" type=\"text/css\"/>
 
         {# Bootstrap CSS link: #}
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD\" crossorigin=\"anonymous\">
@@ -397,7 +397,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
                     <a class=\"nav-link text-light fs-1\" href=\"{{ path('app_contact') }}\"><i class=\"bi bi-info-lg\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-2\" href=\"{{ path('app_orderForm') }}\"><i class=\"bi bi-box2-fill\"></i></a>
+                    <a class=\"nav-link text-light fs-2\" href=\"{{ path('app_orderView') }}\"><i class=\"bi bi-box2-fill\"></i></a>
                 </li>
             </ul>
             </nav-dropdown-items>
@@ -411,6 +411,6 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
     {% endblock %}
 </div>
 </body>
-</html>", "/base.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\base.html.twig");
+</html>", "/base.html.twig", "C:\\Users\\0jian\\Documents\\Education\\Github\\pizziloli-website\\templates\\base.html.twig");
     }
 }

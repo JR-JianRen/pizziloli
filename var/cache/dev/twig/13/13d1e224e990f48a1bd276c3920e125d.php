@@ -27,6 +27,7 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'content' => [$this, 'block_content'],
+            'content2' => [$this, 'block_content2'],
         ];
     }
 
@@ -65,7 +66,7 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo " OrderForm ";
+        echo " Bestelling formulier ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -85,42 +86,49 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
-        echo "    <h3 class=\"fw-bold text-light mt-5\">Bestelling overzicht</h3>
-<div class=\"wrapper bg-light\">
-<div class=\"container py-5\">
-    <div class=\"row\">
-        <div class=\"col-6\">
-            <p>
+        echo "
+    <div class=\"container d-flex justify-content-center text-light\">
 
-                <br>
-                Datum:
+        <div class=\"card bg-black border-0 \">
+                <img src=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 10, $this->source); })()), "picture", [], "any", false, false, false, 10)), "html", null, true);
+        echo "\" class=\"productImg shadow card-img-top rounded\" alt=\"...\">
+                <div class=\"card-body text-light\">
+                    <h5 class=\"card-subtitle text-center fs-3\">";
+        // line 12
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 12, $this->source); })()), "name", [], "any", false, false, false, 12), "html", null, true);
+        echo "</h5>
+                </div>
+        </div>
 
-                <br>
-                Tijd:
+    </div>
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
-                <br><br>
-                ";
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 18
+    public function block_content2($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content2"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content2"));
+
+        // line 19
+        echo "    <div class=\"container mt-5 d-flex justify-content-center text-light\">
+        ";
         // line 20
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), 'form');
         echo "
-
-            </p>
-
-
-
-        </div>
-        <div class=\"col-1\"></div>
-        <div class=\"col-5\">
-            <div class=\"orderView\">
-                <p class=\"\">Bestelling:</p>
-                <p class=\"\">Totaal:</p>
-            </div>
-        </div>
     </div>
-</div>
-</div>
-
-
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -142,49 +150,32 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
 
     public function getDebugInfo()
     {
-        return array (  104 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  129 => 20,  126 => 19,  116 => 18,  100 => 12,  95 => 10,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends '/base.html.twig' %}
 
-{% block title %} OrderForm {% endblock %}
+{% block title %} Bestelling formulier {% endblock %}
 
 {% block content %}
-    <h3 class=\"fw-bold text-light mt-5\">Bestelling overzicht</h3>
-<div class=\"wrapper bg-light\">
-<div class=\"container py-5\">
-    <div class=\"row\">
-        <div class=\"col-6\">
-            <p>
 
-                <br>
-                Datum:
+    <div class=\"container d-flex justify-content-center text-light\">
 
-                <br>
-                Tijd:
-
-                <br><br>
-                {{ form(form) }}
-
-            </p>
-
-
-
+        <div class=\"card bg-black border-0 \">
+                <img src=\"{{ asset(product.picture)}}\" class=\"productImg shadow card-img-top rounded\" alt=\"...\">
+                <div class=\"card-body text-light\">
+                    <h5 class=\"card-subtitle text-center fs-3\">{{ product.name }}</h5>
+                </div>
         </div>
-        <div class=\"col-1\"></div>
-        <div class=\"col-5\">
-            <div class=\"orderView\">
-                <p class=\"\">Bestelling:</p>
-                <p class=\"\">Totaal:</p>
-            </div>
-        </div>
+
     </div>
-</div>
-</div>
-
-
-{% endblock %}", "index/orderForm.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\index\\orderForm.html.twig");
+{% endblock %}
+{% block content2%}
+    <div class=\"container mt-5 d-flex justify-content-center text-light\">
+        {{ form(form) }}
+    </div>
+{% endblock %}", "index/orderForm.html.twig", "C:\\Users\\0jian\\Documents\\Education\\Github\\pizziloli-website\\templates\\index\\orderForm.html.twig");
     }
 }

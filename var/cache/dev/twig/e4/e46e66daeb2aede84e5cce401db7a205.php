@@ -90,7 +90,7 @@ class __TwigTemplate_203c4e37a093a429ee268b1b390201d9 extends Template
  <h1 class=\"my-4 text-light fw-bolder text-center\">";
         // line 8
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 8, $this->source); })()), "name", [], "any", false, false, false, 8), "html", null, true);
-        echo " pizza</h1>
+        echo " pizza's</h1>
 
  <div class=\"row\">
 
@@ -103,16 +103,23 @@ class __TwigTemplate_203c4e37a093a429ee268b1b390201d9 extends Template
             echo "
  <div class=\"col-3 mt-4\">
    <div class=\"card bg-black border-0 \">
-    <a href=\"#\" class=\"text-decoration-none\">
+    <a href=\"";
+            // line 16
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_orderProduct", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 16)]), "html", null, true);
+            echo "\" class=\"text-decoration-none\">
     <img src=\"";
             // line 17
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/catoImg3.jpg"), "html", null, true);
             echo "\" class=\"productImg shadow card-img-top rounded\" alt=\"...\">
     <div class=\"card-body text-light\">
-     <h5 class=\"card-subtitle text-center fs-3\">";
+     <h3 class=\"card-subtitle text-center fs-3\">";
             // line 19
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 19), "html", null, true);
-            echo "</h5>
+            echo "</h3>
+     <p class=\"card-subtitle text-center mt-2\">€";
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 20), "html", null, true);
+            echo "</p>
     </div>
     </a>
    </div>
@@ -122,7 +129,7 @@ class __TwigTemplate_203c4e37a093a429ee268b1b390201d9 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 26
         echo " </div>
 ";
         
@@ -145,7 +152,7 @@ class __TwigTemplate_203c4e37a093a429ee268b1b390201d9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  126 => 25,  114 => 19,  109 => 17,  103 => 13,  99 => 12,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  133 => 26,  121 => 20,  117 => 19,  112 => 17,  108 => 16,  103 => 13,  99 => 12,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -157,7 +164,7 @@ class __TwigTemplate_203c4e37a093a429ee268b1b390201d9 extends Template
 {% block content %}
 
 
- <h1 class=\"my-4 text-light fw-bolder text-center\">{{ category.name }} pizza</h1>
+ <h1 class=\"my-4 text-light fw-bolder text-center\">{{ category.name }} pizza's</h1>
 
  <div class=\"row\">
 
@@ -165,16 +172,17 @@ class __TwigTemplate_203c4e37a093a429ee268b1b390201d9 extends Template
 
  <div class=\"col-3 mt-4\">
    <div class=\"card bg-black border-0 \">
-    <a href=\"#\" class=\"text-decoration-none\">
+    <a href=\"{{ path('app_orderProduct', {id:product.id}) }}\" class=\"text-decoration-none\">
     <img src=\"{{ asset('/img/catoImg3.jpg')}}\" class=\"productImg shadow card-img-top rounded\" alt=\"...\">
     <div class=\"card-body text-light\">
-     <h5 class=\"card-subtitle text-center fs-3\">{{ product.name }}</h5>
+     <h3 class=\"card-subtitle text-center fs-3\">{{ product.name }}</h3>
+     <p class=\"card-subtitle text-center mt-2\">€{{ product.price }}</p>
     </div>
     </a>
    </div>
  </div>
  {% endfor %}
  </div>
-{% endblock %}", "index/categorie.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\index\\categorie.html.twig");
+{% endblock %}", "index/categorie.html.twig", "C:\\Users\\0jian\\Documents\\Education\\Github\\pizziloli-website\\templates\\index\\categorie.html.twig");
     }
 }
