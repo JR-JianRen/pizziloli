@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Amount;
 use App\Entity\Order;
+use App\Entity\Product;
 use App\Form\OrderProductType;
 use App\Form\OrderViewType;
 use App\Repository\AmountRepository;
@@ -85,22 +86,25 @@ class indexController extends AbstractController
 
     //OrderProduct
     #[Route('/orderProduct/{id}', name: 'app_orderProduct')]
-    public function insert2(Request $request,  AmountRepository $amountRepository,ProductRepository $productRepository, int $id): Response
+    public function insert2(Request $request,  AmountRepository $amountRepository, Product $product): Response
     {
         $order = new Amount();
+        $order->setProduct($product);
+        $order->setOrderId(2);
         $form = $this->createForm( OrderProductType::class, $order);
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
             $orderr = $form->getData();
             $amountRepository->save($orderr);
             return $this->redirectToRoute('app_orderProduct');
         }
 
-        $product = $productRepository->find($id);
+        $product2 = $product;
 
         return $this->renderForm('index/orderForm.html.twig', [
             'form' => $form,
-            'product' => $product,
+            'product' => $product2,
         ]);
     }
 }

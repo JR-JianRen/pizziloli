@@ -272,6 +272,6 @@ class __TwigTemplate_4cb725b4d47d7d272a2b126a1c5ddf87 extends Template
         </div>
         <div class=\"col-1\"></div>
     </div>
-{% endblock %}", "index/index.html.twig", "C:\\Users\\0jian\\Documents\\Education\\Github\\pizziloli-website\\templates\\index\\index.html.twig");
+{% endblock %}", "index/index.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\index\\index.html.twig");
     }
 }
