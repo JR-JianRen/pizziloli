@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Order;
 use App\Entity\Product;
 use App\Form\OrderFormType;
+use App\Form\AddToCartType;
 use App\Repository\CategoryRepository;
 use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
@@ -69,33 +70,12 @@ class indexController extends AbstractController
     #[Route('/addToCart/{id}', name: 'app_addToCart')]
     public function addToCart(Request $request, Product $product): Response
     {
-        $form = $this->createFormBuilder()
-            ->add('amount', IntegerType::class,
-                ['attr' => array(
-                    'placeholder' => ' '
-                )])
-            ->add('size',
-                ChoiceType::class,
-                [
-                    'choices' => [
-                        'Medium (25 cm)' => 'medium',
-                        'Large (35 cm)' => 'large',
-                        'Calzone' => 'calzone',
-                    ],
-                    'expanded' => true
-                ])
-            ->add('toevoegen', SubmitType::class,
-                [
-                    'attr' =>array(
-                        'class' => 'bg-light text-dark',
-                    )])
-            ->getForm();
 
+        $form = $this->createForm( AddToCartType::class);
         $form->handleRequest($request);
 
         //Session starten
         $session = $request->getSession();
-
 
         if ($form->isSubmitted() && $form->isValid()) {
             // data is an array with "amount" and "size" keys
@@ -115,7 +95,7 @@ class indexController extends AbstractController
 
     //orderForm
     #[Route('/orderForm', name: 'app_orderForm')]
-    public function orderForm(Request $request,  OrderRepository $orderRepository, Product $product): Response
+    public function orderForm(Request $request,  OrderRepository $orderRepository, ProductRepository $productRepository): Response
     {
         $order = new Order();
         $form = $this->createForm( OrderFormType::class, $order);
@@ -128,13 +108,15 @@ class indexController extends AbstractController
 
         $session = $request->getSession();
         $addProduct = $session->get('productForm');
-        $productId = $session->get('productId', $product);
+        $productId = $session->get('productId');
 
-        $product = $product->find(1);
+        $products = $productRepository->find($productId);
+
+//        https://www.branchcms.com/learn/docs/developer/twig/operators
 
         return $this->renderForm('index/orderForm.html.twig', [
             'form' => $form,
-            'product' => $product,
+            'product' => $products,
             'test' => $addProduct,
         ]);
     }

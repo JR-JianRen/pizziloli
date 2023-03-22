@@ -260,7 +260,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
                 <li class=\"nav-item\">
                     <a class=\"nav-link text-light fs-2\" href=\"";
         // line 83
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_orderView");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_orderForm");
         echo "\"><i class=\"bi bi-box2-fill\"></i></a>
                 </li>
             </ul>
@@ -397,7 +397,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
                     <a class=\"nav-link text-light fs-1\" href=\"{{ path('app_contact') }}\"><i class=\"bi bi-info-lg\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-2\" href=\"{{ path('app_orderView') }}\"><i class=\"bi bi-box2-fill\"></i></a>
+                    <a class=\"nav-link text-light fs-2\" href=\"{{ path('app_orderForm') }}\"><i class=\"bi bi-box2-fill\"></i></a>
                 </li>
             </ul>
             </nav-dropdown-items>

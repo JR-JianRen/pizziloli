@@ -17,12 +17,14 @@ class OrderFormType extends AbstractType
             ->add('name', TextType::class,
             ['attr' => array(
                 'class' => '',
-                'placeholder' => 'Voornaam'
+                'placeholder' => 'Voornaam',
+                'label' => 'Naam'
             )])
             ->add('address', TextType::class,
                 ['attr' => array(
                     'class' => '',
                     'placeholder' => 'straatnaam met huisnummer, postcode met stadnaam',
+                    'label' => 'adres'
                 )])
 //            ->add('product')
 //            ->add('order_status')
@@ -32,7 +34,7 @@ class OrderFormType extends AbstractType
             ->add('Bestellen', SubmitType::class,
                 [
                     'attr' =>array(
-                        'class' => 'bg-dark text-light px-5 py-2'
+                        'class' => 'bg-dark text-light px-5 py-2',
                     )
                 ]);
     }
