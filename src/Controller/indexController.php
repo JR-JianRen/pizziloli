@@ -80,6 +80,7 @@ class indexController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // data is an array with "amount" and "size" keys
             $data = $form->getData();
+
             $session->set('productForm', $data);
             $session->set('productId', $product);
             return $this->redirectToRoute('app_orderForm');
@@ -111,8 +112,6 @@ class indexController extends AbstractController
         $productId = $session->get('productId');
 
         $products = $productRepository->find($productId);
-
-//        https://www.branchcms.com/learn/docs/developer/twig/operators
 
         return $this->renderForm('index/orderForm.html.twig', [
             'form' => $form,

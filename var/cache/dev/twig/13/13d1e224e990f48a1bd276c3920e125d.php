@@ -111,11 +111,9 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
         echo "</p>
                         <br>
                         <p class=\"\">Totaal:</p>
-                        <p>";
+                        <p> € ";
         // line 22
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["test"]) || array_key_exists("test", $context) ? $context["test"] : (function () { throw new RuntimeError('Variable "test" does not exist.', 22, $this->source); })()), "amount", [], "any", false, false, false, 22), "html", null, true);
-        echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 22, $this->source); })()), "price", [], "any", false, false, false, 22), "html", null, true);
+        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, (isset($context["test"]) || array_key_exists("test", $context) ? $context["test"] : (function () { throw new RuntimeError('Variable "test" does not exist.', 22, $this->source); })()), "amount", [], "any", false, false, false, 22) * twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 22, $this->source); })()), "price", [], "any", false, false, false, 22)), "html", null, true);
         echo "</p>
 
                     </div>
@@ -172,7 +170,7 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
                         <p>{{ test.amount }} x {{ test.size}} {{ product.name }}</p>
                         <br>
                         <p class=\"\">Totaal:</p>
-                        <p>{{ test.amount }} {{ product.price }}</p>
+                        <p> € {{ test.amount * product.price }}</p>
 
                     </div>
                 </div>
