@@ -1,0 +1,23 @@
+{% extends '/base.html.twig' %}
+
+{% block title %} Bestelling formulier {% endblock %}
+
+{% block content %}
+
+    <div class="container d-flex justify-content-center text-light">
+
+        <div class="card bg-black border-0 ">
+                <img src="{{ asset(product.picture)}}" class="productImg shadow card-img-top rounded" alt="...">
+                <div class="card-body text-light">
+                    <h5 class="card-subtitle text-center fs-3">{{ product.name }}</h5>
+                </div>
+        </div>
+
+    </div>
+{% endblock %}
+{% block content2%}
+    <div class="container mt-5 d-flex justify-content-center text-light">
+        {{ form(addToCarForm) }}
+    </div>
+
+{% endblock %}

@@ -1,22 +1,31 @@
 {% extends '/base.html.twig' %}
 
-{% block title %} Bestelling formulier {% endblock %}
+{% block title %} Bestelling overzicht {% endblock %}
 
 {% block content %}
-
-    <div class="container d-flex justify-content-center text-light">
-
-        <div class="card bg-black border-0 ">
-                <img src="{{ asset(product.picture)}}" class="productImg shadow card-img-top rounded" alt="...">
-                <div class="card-body text-light">
-                    <h5 class="card-subtitle text-center fs-3">{{ product.name }}</h5>
+    <h3 class="fw-bold text-light mt-5">Bestelling overzicht</h3>
+    <div class="orderViewForm wrapper bg-light" style="height: 30rem">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-6">
+                    <p>
+                        {{ form(form) }}
+                    </p>
                 </div>
-        </div>
+                <div class="col-1"></div>
+                <div class="col-5">
+                    <div class="orderView">
+                        <p class="">Bestelling:</p>
 
+                        <p>{{ test.amount }} x {{ test.size }} [pizza] </p>
+                        <br>
+                        <p class="">Totaal:</p>
+                        <p>{{ product.name }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-{% endblock %}
-{% block content2%}
-    <div class="container mt-5 d-flex justify-content-center text-light">
-        {{ form(form) }}
-    </div>
+
+
 {% endblock %}

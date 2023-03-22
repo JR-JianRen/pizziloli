@@ -21,17 +21,20 @@ class Order
     #[ORM\Column(length: 255)]
     private ?string $address = null;
 
-    #[ORM\Column (type: Types::INTEGER, nullable: true)]
-    private ?int $order_status = null;
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $product = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 12, scale: 2, nullable: true)]
-    private ?string $total_price = null;
+    #[ORM\Column(length: 255)]
+    private ?string $order_status = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(type: Types::TIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $time = null;
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2, nullable: true)]
+    private ?string $total_price = null;
 
     public function getId(): ?int
     {
@@ -62,26 +65,26 @@ class Order
         return $this;
     }
 
-    public function getOrderStatus(): ?int
+    public function getProduct(): ?string
     {
-        return $this->order_status;
+        return $this->product;
     }
 
-    public function setOrderStatus(int $order_status): self
+    public function setProduct(string $product): self
     {
-        $this->order_status = $order_status;
+        $this->product = $product;
 
         return $this;
     }
 
-    public function getTotalPrice(): ?string
+    public function getOrderStatus(): ?string
     {
-        return $this->total_price;
+        return $this->order_status;
     }
 
-    public function setTotalPrice(?string $total_price): self
+    public function setOrderStatus(string $order_status): self
     {
-        $this->total_price = $total_price;
+        $this->order_status = $order_status;
 
         return $this;
     }
@@ -106,6 +109,18 @@ class Order
     public function setTime(?\DateTimeInterface $time): self
     {
         $this->time = $time;
+
+        return $this;
+    }
+
+    public function getTotalPrice(): ?string
+    {
+        return $this->total_price;
+    }
+
+    public function setTotalPrice(?string $total_price): self
+    {
+        $this->total_price = $total_price;
 
         return $this;
     }
