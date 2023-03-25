@@ -183,6 +183,10 @@ class __TwigTemplate_8b31512c2e9cd6daa920363c355f9f2e extends Template
  </div>
  {% endfor %}
  </div>
+<<<<<<< Updated upstream
 {% endblock %}", "index/category.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\index\\category.html.twig");
+=======
+{% endblock %}", "index/category.html.twig", "C:\\Users\\0jian\\Documents\\Education\\Github\\pizziloli-website\\templates\\index\\category.html.twig");
+>>>>>>> Stashed changes
     }
 }

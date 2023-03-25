@@ -16,17 +16,25 @@ class OrderFormType extends AbstractType
         $builder
             ->add('name', TextType::class,
             ['attr' => array(
+<<<<<<< Updated upstream
                 'class' => '',
+=======
+                'class' => 'w-75',
+>>>>>>> Stashed changes
                 'placeholder' => 'Voornaam',
                 'label' => 'Naam'
             )])
             ->add('address', TextType::class,
                 ['attr' => array(
+<<<<<<< Updated upstream
                     'class' => '',
                     'placeholder' => 'straatnaam met huisnummer, postcode met stadnaam',
                     'label' => 'adres'
+=======
+                    'class' => 'w-75',
+                    'placeholder' => 'straatnaam huisnummer, postcode stadnaam',
+>>>>>>> Stashed changes
                 )])
-//            ->add('product')
 //            ->add('order_status')
 //            ->add('total_price')
 //            ->add('date')

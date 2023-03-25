@@ -4,18 +4,23 @@ namespace App\Controller;
 
 use App\Entity\Order;
 use App\Entity\Product;
+<<<<<<< Updated upstream
+=======
+use App\Form\UserType;
+>>>>>>> Stashed changes
 use App\Form\OrderFormType;
 use App\Form\AddToCartType;
 use App\Repository\CategoryRepository;
 use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
+<<<<<<< Updated upstream
+=======
+use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
+>>>>>>> Stashed changes
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -98,20 +103,33 @@ class indexController extends AbstractController
     #[Route('/orderForm', name: 'app_orderForm')]
     public function orderForm(Request $request,  OrderRepository $orderRepository, ProductRepository $productRepository): Response
     {
-        $order = new Order();
-        $form = $this->createForm( OrderFormType::class, $order);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $orderr = $form->getData();
-            $orderRepository->save($orderr);
-            return $this->redirectToRoute('app_orderForm');
-        }
-
         $session = $request->getSession();
         $addProduct = $session->get('productForm');
         $productId = $session->get('productId');
-
         $products = $productRepository->find($productId);
+<<<<<<< Updated upstream
+=======
+        $url = $request->getUri();
+        $productPrice = $addProduct['amount'] * $products->getPrice();
+
+        $order = new Order();
+        $order->setOrderStatus('Bezig');
+        $order->setDate(new \DateTime());
+        $order->setTime(new \DateTime());
+        $order->setAmount($addProduct['amount']);
+        $order->setProduct($productRepository->find($productId));
+        $order->setTotalPrice($productPrice);
+        $form = $this->createForm( OrderFormType::class, $order);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $orderRepository->save($data);
+
+            $this->addFlash('succes', 'Bedankt van je aankoop. Je bestelling is geplaats!');
+            return $this->redirectToRoute('app_orderForm');
+        }
+>>>>>>> Stashed changes
 
         return $this->renderForm('index/orderForm.html.twig', [
             'form' => $form,

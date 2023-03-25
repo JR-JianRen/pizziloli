@@ -178,6 +178,10 @@ class __TwigTemplate_c4d8b75a6c41e8a5c51f270716431728 extends Template
         {{ form(addToCarForm) }}
     </div>
 
+<<<<<<< Updated upstream
 {% endblock %}", "index/addToCart.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\index\\addToCart.twig");
+=======
+{% endblock %}", "index/addToCart.twig", "C:\\Users\\0jian\\Documents\\Education\\Github\\pizziloli-website\\templates\\index\\addToCart.twig");
+>>>>>>> Stashed changes
     }
 }

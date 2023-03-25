@@ -36,6 +36,15 @@ class Order
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2, nullable: true)]
     private ?string $total_price = null;
 
+<<<<<<< Updated upstream
+=======
+    #[ORM\ManyToOne(inversedBy: 'product')]
+    private ?Product $product = null;
+
+    #[ORM\Column]
+    private ?int $amount = null;
+
+>>>>>>> Stashed changes
     public function getId(): ?int
     {
         return $this->id;
@@ -124,4 +133,31 @@ class Order
 
         return $this;
     }
+<<<<<<< Updated upstream
+=======
+
+    public function getProduct(): ?Product
+    {
+        return $this->product;
+    }
+
+    public function setProduct(?Product $product): self
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    public function getAmount(): ?int
+    {
+        return $this->amount;
+    }
+
+    public function setAmount(int $amount): self
+    {
+        $this->amount = $amount;
+
+        return $this;
+    }
+>>>>>>> Stashed changes
 }
