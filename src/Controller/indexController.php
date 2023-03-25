@@ -86,7 +86,6 @@ class indexController extends AbstractController
         return $this->renderForm('index/addToCart.twig',[
             'addToCarForm' => $form,
             'product' => $product,
-            'test' => print_r($addProduct),
         ]);
     }
 
