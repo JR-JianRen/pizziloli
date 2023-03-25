@@ -7,6 +7,7 @@ use App\Entity\Product;
 use App\Form\AddToCartType;
 use App\Form\LoginType;
 use App\Form\OrderFormType;
+use App\Form\editOrderStatusType;
 use App\Repository\CategoryRepository;
 use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
@@ -159,18 +160,38 @@ class indexController extends AbstractController
         ]);
     }
 
-    //orderFormAdminEdit
+    //orderFormAdminDelete
     #[Route('/orderForm/admin/delete/{id}', name: 'deleteOrder')]
     public function deleteOrder(Request $request, $id, OrderRepository $orderRepository, EntityManagerInterface $em): Response
     {
         $order = $orderRepository->find($id);
         $em->remove($order);
         $em->flush();
-        $url = $request->getUri();
 
         return $this->redirectToRoute('app_orderFormAdmin');
 
     }
+
+    //orderFormAdminUpdate
+    #[Route('/orderForm/admin/updateStatus/{id}', name: 'updateStatus')]
+    public function updateStatus(Request $request, $id, OrderRepository $orderRepository, EntityManagerInterface $em): Response
+    {
+        $order = $orderRepository->find($id);
+        $form = $this->createForm(editOrderStatusType::class, $order);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $order->setOrderStatus($form->get('order_status')->getData());
+            $em->flush();
+            return $this->redirectToRoute('app_orderFormAdmin');
+        }
+
+        return $this->renderForm('index/updateStatus.html.twig', [
+            'updateStatus' => $form,
+        ]);
+
+    }
+
 }
 
 

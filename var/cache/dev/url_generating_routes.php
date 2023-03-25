@@ -12,6 +12,7 @@ return [
     'app_login' => [[], ['_controller' => 'App\\Controller\\indexController::login'], [], [['text', '/login']], [], [], []],
     'app_orderFormAdmin' => [[], ['_controller' => 'App\\Controller\\indexController::orderFormAdmin'], [], [['text', '/orderForm/admin']], [], [], []],
     'deleteOrder' => [['id'], ['_controller' => 'App\\Controller\\indexController::deleteOrder'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/orderForm/admin/delete']], [], [], []],
+    'updateStatus' => [['id'], ['_controller' => 'App\\Controller\\indexController::updateStatus'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/orderForm/admin/updateStatus']], [], [], []],
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
     '_wdt' => [['token'], ['_controller' => 'web_profiler.controller.profiler::toolbarAction'], [], [['variable', '/', '[^/]++', 'token', true], ['text', '/_wdt']], [], [], []],
     '_profiler_home' => [[], ['_controller' => 'web_profiler.controller.profiler::homeAction'], [], [['text', '/_profiler/']], [], [], []],

@@ -24,20 +24,23 @@ return [
         0 => '{^(?'
                 .'|/category/([^/]++)(*:25)'
                 .'|/addToCart/([^/]++)(*:51)'
-                .'|/orderForm/admin/delete/([^/]++)(*:90)'
+                .'|/orderForm/admin/(?'
+                    .'|delete/([^/]++)(*:93)'
+                    .'|updateStatus/([^/]++)(*:121)'
+                .')'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:128)'
-                    .'|wdt/([^/]++)(*:148)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:161)'
+                    .'|wdt/([^/]++)(*:181)'
                     .'|profiler/([^/]++)(?'
                         .'|/(?'
-                            .'|search/results(*:194)'
-                            .'|router(*:208)'
+                            .'|search/results(*:227)'
+                            .'|router(*:241)'
                             .'|exception(?'
-                                .'|(*:228)'
-                                .'|\\.css(*:241)'
+                                .'|(*:261)'
+                                .'|\\.css(*:274)'
                             .')'
                         .')'
-                        .'|(*:251)'
+                        .'|(*:284)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -45,14 +48,15 @@ return [
     [ // $dynamicRoutes
         25 => [[['_route' => 'app_category', '_controller' => 'App\\Controller\\indexController::category'], ['id'], null, null, false, true, null]],
         51 => [[['_route' => 'app_addToCart', '_controller' => 'App\\Controller\\indexController::addToCart'], ['id'], null, null, false, true, null]],
-        90 => [[['_route' => 'deleteOrder', '_controller' => 'App\\Controller\\indexController::deleteOrder'], ['id'], null, null, false, true, null]],
-        128 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        148 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        194 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        208 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        228 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        241 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        251 => [
+        93 => [[['_route' => 'deleteOrder', '_controller' => 'App\\Controller\\indexController::deleteOrder'], ['id'], null, null, false, true, null]],
+        121 => [[['_route' => 'updateStatus', '_controller' => 'App\\Controller\\indexController::updateStatus'], ['id'], null, null, false, true, null]],
+        161 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        181 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        227 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        241 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        261 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        274 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        284 => [
             [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

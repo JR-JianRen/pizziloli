@@ -57,6 +57,7 @@
                         Totaal prijs: {{ order.totalPrice }}
                         <br><br>
                         <a class="btn btn-danger" href="{{ path('deleteOrder', { id:order.id }) }}">Delete</a>
+                        <a class="btn btn-primary" href="{{ path('updateStatus', { id:order.id}) }}">Update status</a>
                     </p>
                     </div>
                 {% endfor %}
