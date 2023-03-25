@@ -4,7 +4,7 @@
 
 {% block content %}
     <h3 class="fw-bold text-light mt-5">Bestelling overzicht</h3>
-    <div class="orderViewForm wrapper bg-light" style="height: 30rem">
+    <div class="orderViewForm wrapper bg-light">
         {% for msg in app.session.flashBag.get('succes') %}
             <div class="alert alert-primary text-center" role="alert">
                 {{ msg }}
@@ -39,6 +39,7 @@
                 <div class="row py-5 mx-3">
                 {%  for order in orders %}
                     <div class="col-2">
+                        <hr>
                     <p>
                         Status: {{ order.orderStatus }}
                         <br><br>
@@ -49,21 +50,15 @@
                         Naam: {{ order.name }}
                         <br>
                         Adres: {{ order.address }}
-
                     </p>
                     <p>
                         Bestelling: <br> {{ order.amount }} x {{ order.product.name }}
                         <br><br>
                         Totaal prijs: {{ order.totalPrice }}
                     </p>
-                        <p>
-
-                        </p>
                     </div>
                 {% endfor %}
                 </div>
             {% endif %}
     </div>
-
-
 {% endblock %}
