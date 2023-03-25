@@ -6510,7 +6510,13 @@
         <argument key="productRepository" type="service_closure" id="App\Repository\ProductRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.FJhkud1" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.VgZAvnB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="orderRepository" type="service_closure" id="App\Repository\OrderRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.C.sCokC" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\indexController::addToCart" type="service_closure" id=".service_locator.5OibA2."/>
@@ -6518,6 +6524,7 @@
         <argument key="App\Controller\indexController::category" type="service_closure" id=".service_locator.URIEtQd"/>
         <argument key="App\Controller\indexController::home" type="service_closure" id=".service_locator.RdVbGrJ"/>
         <argument key="App\Controller\indexController::orderForm" type="service_closure" id=".service_locator.13OHCPc"/>
+        <argument key="App\Controller\indexController::orderFormAdmin" type="service_closure" id=".service_locator.VgZAvnB"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -6527,6 +6534,7 @@
         <argument key="App\Controller\indexController:category" type="service_closure" id=".service_locator.URIEtQd"/>
         <argument key="App\Controller\indexController:home" type="service_closure" id=".service_locator.RdVbGrJ"/>
         <argument key="App\Controller\indexController:orderForm" type="service_closure" id=".service_locator.13OHCPc"/>
+        <argument key="App\Controller\indexController:orderFormAdmin" type="service_closure" id=".service_locator.VgZAvnB"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
       </argument>
@@ -7144,12 +7152,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.FJhkud1"/>
+      <argument type="service" id=".service_locator.C.sCokC"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.FJhkud1"/>
+      <argument type="service" id=".service_locator.C.sCokC"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8116,7 +8124,7 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.FJhkud1"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.C.sCokC"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8141,7 +8149,7 @@
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.5ckaP5z" alias=".service_locator.URIEtQd"/>
-    <service id=".service_locator.kfa.eP_" alias=".service_locator.FJhkud1"/>
+    <service id=".service_locator.4Pw9Ehz" alias=".service_locator.C.sCokC"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.XNMTsCn" alias=".service_locator.u3qcQti"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -8174,6 +8182,7 @@
     <service id=".service_locator.BI4VE3." alias=".service_locator.URIEtQd"/>
     <service id=".service_locator.6YEQyJB" alias=".service_locator.5OibA2."/>
     <service id=".service_locator.0MfWkPX" alias=".service_locator.13OHCPc"/>
+    <service id=".service_locator.cMAB3dk" alias=".service_locator.VgZAvnB"/>
     <service id=".service_locator.A740LBW" alias=".service_locator.mx0UMmY"/>
     <service id=".service_locator.L0rFhJm" alias=".service_locator.GVyCdgr"/>
     <service id=".service_locator.pFwChgS" alias=".service_locator.UkE3SaZ"/>

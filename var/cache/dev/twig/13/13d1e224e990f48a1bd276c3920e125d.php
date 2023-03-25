@@ -86,7 +86,7 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
 
         // line 6
         echo "    <h3 class=\"fw-bold text-light mt-5\">Bestelling overzicht</h3>
-    <div class=\"orderViewForm wrapper bg-light\" style=\"height: 30rem\">
+    <div class=\"orderViewForm wrapper bg-light\">
         ";
         // line 8
         $context['_parent'] = $context;
@@ -173,32 +173,32 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
             foreach ($context['_seq'] as $context["_key"] => $context["order"]) {
                 // line 41
                 echo "                    <div class=\"col-2\">
+                        <hr>
                     <p>
                         Status: ";
-                // line 43
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "orderStatus", [], "any", false, false, false, 43), "html", null, true);
+                // line 44
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "orderStatus", [], "any", false, false, false, 44), "html", null, true);
                 echo "
                         <br><br>
                         ";
-                // line 45
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "date", [], "any", false, false, false, 45), "m/d/Y"), "html", null, true);
+                // line 46
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "date", [], "any", false, false, false, 46), "m/d/Y"), "html", null, true);
                 echo "
                         <br>
                         ";
-                // line 47
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "time", [], "any", false, false, false, 47), "H:i:s"), "html", null, true);
+                // line 48
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "time", [], "any", false, false, false, 48), "H:i:s"), "html", null, true);
                 echo "
                         <br><br>
                         Naam: ";
-                // line 49
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "name", [], "any", false, false, false, 49), "html", null, true);
+                // line 50
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "name", [], "any", false, false, false, 50), "html", null, true);
                 echo "
                         <br>
                         Adres: ";
-                // line 51
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "address", [], "any", false, false, false, 51), "html", null, true);
+                // line 52
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "address", [], "any", false, false, false, 52), "html", null, true);
                 echo "
-
                     </p>
                     <p>
                         Bestelling: <br> ";
@@ -213,23 +213,18 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "totalPrice", [], "any", false, false, false, 57), "html", null, true);
                 echo "
                     </p>
-                        <p>
-
-                        </p>
                     </div>
                 ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['order'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 64
+            // line 61
             echo "                </div>
             ";
         }
-        // line 66
+        // line 63
         echo "    </div>
-
-
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -251,7 +246,7 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
 
     public function getDebugInfo()
     {
-        return array (  230 => 66,  226 => 64,  213 => 57,  206 => 55,  199 => 51,  194 => 49,  189 => 47,  184 => 45,  179 => 43,  175 => 41,  171 => 40,  168 => 39,  166 => 38,  163 => 37,  155 => 32,  143 => 29,  133 => 22,  128 => 19,  119 => 16,  116 => 15,  111 => 14,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  227 => 63,  223 => 61,  213 => 57,  206 => 55,  200 => 52,  195 => 50,  190 => 48,  185 => 46,  180 => 44,  175 => 41,  171 => 40,  168 => 39,  166 => 38,  163 => 37,  155 => 32,  143 => 29,  133 => 22,  128 => 19,  119 => 16,  116 => 15,  111 => 14,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -262,7 +257,7 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
 
 {% block content %}
     <h3 class=\"fw-bold text-light mt-5\">Bestelling overzicht</h3>
-    <div class=\"orderViewForm wrapper bg-light\" style=\"height: 30rem\">
+    <div class=\"orderViewForm wrapper bg-light\">
         {% for msg in app.session.flashBag.get('succes') %}
             <div class=\"alert alert-primary text-center\" role=\"alert\">
                 {{ msg }}
@@ -297,6 +292,7 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
                 <div class=\"row py-5 mx-3\">
                 {%  for order in orders %}
                     <div class=\"col-2\">
+                        <hr>
                     <p>
                         Status: {{ order.orderStatus }}
                         <br><br>
@@ -307,23 +303,17 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
                         Naam: {{ order.name }}
                         <br>
                         Adres: {{ order.address }}
-
                     </p>
                     <p>
                         Bestelling: <br> {{ order.amount }} x {{ order.product.name }}
                         <br><br>
                         Totaal prijs: {{ order.totalPrice }}
                     </p>
-                        <p>
-
-                        </p>
                     </div>
                 {% endfor %}
                 </div>
             {% endif %}
     </div>
-
-
 {% endblock %}", "index/orderForm.html.twig", "C:\\Users\\0jian\\Documents\\Education\\Github\\pizziloli-website\\templates\\index\\orderForm.html.twig");
     }
 }

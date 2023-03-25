@@ -136,14 +136,26 @@ class indexController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // data is an array with "amount" and "size" keys
             $data = $form->getData();
 
-//            return $this->redirectToRoute('app_orderForm');
+            return $this->redirectToRoute('app_orderFormAdmin');
         }
 
         return $this->renderForm('index/login.html.twig',[
             'loginForm' => $form,
+        ]);
+    }
+
+    //orderForm
+    #[Route('/orderForm/admin', name: 'app_orderFormAdmin')]
+    public function orderFormAdmin(Request $request,  OrderRepository $orderRepository): Response
+    {
+        $order = $orderRepository->findAll();
+        $url = $request->getUri();
+
+        return $this->renderForm('index/orderForm.html.twig', [
+        'orders' => $order,
+        'url' => $url,
         ]);
     }
 }
