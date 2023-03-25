@@ -212,6 +212,11 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
                 // line 57
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "totalPrice", [], "any", false, false, false, 57), "html", null, true);
                 echo "
+                        <br><br>
+                        <a class=\"btn btn-danger\" href=\"";
+                // line 59
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deleteOrder", ["id" => twig_get_attribute($this->env, $this->source, $context["order"], "id", [], "any", false, false, false, 59)]), "html", null, true);
+                echo "\">Delete</a>
                     </p>
                     </div>
                 ";
@@ -219,11 +224,11 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['order'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 61
+            // line 63
             echo "                </div>
             ";
         }
-        // line 63
+        // line 65
         echo "    </div>
 ";
         
@@ -246,7 +251,7 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
 
     public function getDebugInfo()
     {
-        return array (  227 => 63,  223 => 61,  213 => 57,  206 => 55,  200 => 52,  195 => 50,  190 => 48,  185 => 46,  180 => 44,  175 => 41,  171 => 40,  168 => 39,  166 => 38,  163 => 37,  155 => 32,  143 => 29,  133 => 22,  128 => 19,  119 => 16,  116 => 15,  111 => 14,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  232 => 65,  228 => 63,  218 => 59,  213 => 57,  206 => 55,  200 => 52,  195 => 50,  190 => 48,  185 => 46,  180 => 44,  175 => 41,  171 => 40,  168 => 39,  166 => 38,  163 => 37,  155 => 32,  143 => 29,  133 => 22,  128 => 19,  119 => 16,  116 => 15,  111 => 14,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -263,7 +268,7 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
                 {{ msg }}
             </div>
         {% endfor %}
-            {% if url == 'http://127.0.0.1:8000/orderForm' %}
+            {% if url == 'http://127.0.0.1:8000/orderForm'%}
                 {% for msg in app.session.flashBag.get('succes') %}
                     <div class=\"alert alert-secondary\" role=\"alert\">
                         {{ msg }}
@@ -308,6 +313,8 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
                         Bestelling: <br> {{ order.amount }} x {{ order.product.name }}
                         <br><br>
                         Totaal prijs: {{ order.totalPrice }}
+                        <br><br>
+                        <a class=\"btn btn-danger\" href=\"{{ path('deleteOrder', { id:order.id }) }}\">Delete</a>
                     </p>
                     </div>
                 {% endfor %}

@@ -10,6 +10,7 @@ use App\Form\OrderFormType;
 use App\Repository\CategoryRepository;
 use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -145,7 +146,7 @@ class indexController extends AbstractController
         ]);
     }
 
-    //orderForm
+    //orderFormAdmin
     #[Route('/orderForm/admin', name: 'app_orderFormAdmin')]
     public function orderFormAdmin(Request $request,  OrderRepository $orderRepository): Response
     {
@@ -156,6 +157,19 @@ class indexController extends AbstractController
         'orders' => $order,
         'url' => $url,
         ]);
+    }
+
+    //orderFormAdminEdit
+    #[Route('/orderForm/admin/delete/{id}', name: 'deleteOrder')]
+    public function deleteOrder(Request $request, $id, OrderRepository $orderRepository, EntityManagerInterface $em): Response
+    {
+        $order = $orderRepository->find($id);
+        $em->remove($order);
+        $em->flush();
+        $url = $request->getUri();
+
+        return $this->redirectToRoute('app_orderFormAdmin');
+
     }
 }
 
