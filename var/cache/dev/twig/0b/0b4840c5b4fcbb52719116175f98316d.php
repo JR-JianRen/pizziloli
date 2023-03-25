@@ -133,9 +133,9 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         // line 11
         echo "        ";
         // line 12
-        echo "        <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        echo "        <link href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/css/style.css"), "html", null, true);
-        echo "\">
+        echo "\" rel=\"stylesheet\" type=\"text/css\"/>
 
         ";
         // line 15
@@ -243,16 +243,25 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
             <nav-dropdown-items id=\"navId\">
             <ul class=\"navbar-nav text-center mt-2 w-100\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-3\" href=\"/home\"><i class=\"fa-solid fa-house\"></i></a>
+                    <a class=\"nav-link text-light fs-3\" href=\"";
+        // line 74
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\"><i class=\"fa-solid fa-house\"></i></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link text-light fs-3\" href=\"/login\"><i class=\"bi bi-person-fill\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-1\" href=\"/contact\"><i class=\"bi bi-info-lg\"></i></a>
+                    <a class=\"nav-link text-light fs-1\" href=\"";
+        // line 80
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact");
+        echo "\"><i class=\"bi bi-info-lg\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-2\" href=\"/bestelling\"><i class=\"bi bi-box2-fill\"></i></a>
+                    <a class=\"nav-link text-light fs-2\" href=\"";
+        // line 83
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_orderForm");
+        echo "\"><i class=\"bi bi-box2-fill\"></i></a>
                 </li>
             </ul>
             </nav-dropdown-items>
@@ -301,7 +310,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     public function getDebugInfo()
     {
-        return array (  282 => 93,  272 => 92,  216 => 44,  206 => 43,  195 => 40,  185 => 39,  171 => 34,  161 => 33,  150 => 21,  146 => 18,  142 => 15,  136 => 12,  134 => 11,  124 => 10,  105 => 5,  93 => 95,  91 => 92,  88 => 91,  86 => 43,  83 => 42,  80 => 39,  78 => 33,  71 => 28,  69 => 23,  67 => 10,  64 => 9,  59 => 6,  55 => 5,  49 => 1,);
+        return array (  291 => 93,  281 => 92,  263 => 83,  257 => 80,  248 => 74,  216 => 44,  206 => 43,  195 => 40,  185 => 39,  171 => 34,  161 => 33,  150 => 21,  146 => 18,  142 => 15,  136 => 12,  134 => 11,  124 => 10,  105 => 5,  93 => 95,  91 => 92,  88 => 91,  86 => 43,  83 => 42,  80 => 39,  78 => 33,  71 => 28,  69 => 23,  67 => 10,  64 => 9,  59 => 6,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -317,7 +326,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     {% block stylesheets %}
         {# CSS link: #}
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('/css/style.css')}}\">
+        <link href=\"{{ asset('/css/style.css') }}\" rel=\"stylesheet\" type=\"text/css\"/>
 
         {# Bootstrap CSS link: #}
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD\" crossorigin=\"anonymous\">
@@ -379,16 +388,16 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
             <nav-dropdown-items id=\"navId\">
             <ul class=\"navbar-nav text-center mt-2 w-100\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-3\" href=\"/home\"><i class=\"fa-solid fa-house\"></i></a>
+                    <a class=\"nav-link text-light fs-3\" href=\"{{ path('app_home') }}\"><i class=\"fa-solid fa-house\"></i></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link text-light fs-3\" href=\"/login\"><i class=\"bi bi-person-fill\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-1\" href=\"/contact\"><i class=\"bi bi-info-lg\"></i></a>
+                    <a class=\"nav-link text-light fs-1\" href=\"{{ path('app_contact') }}\"><i class=\"bi bi-info-lg\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-2\" href=\"/bestelling\"><i class=\"bi bi-box2-fill\"></i></a>
+                    <a class=\"nav-link text-light fs-2\" href=\"{{ path('app_orderForm') }}\"><i class=\"bi bi-box2-fill\"></i></a>
                 </li>
             </ul>
             </nav-dropdown-items>

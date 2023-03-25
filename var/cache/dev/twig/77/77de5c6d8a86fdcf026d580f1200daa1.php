@@ -103,7 +103,9 @@ class __TwigTemplate_4cb725b4d47d7d272a2b126a1c5ddf87 extends Template
             <div class=\"orderBtn d-flex justify-content-start my-4\">
 ";
         // line 22
-        echo "                <a href=\"/menu\" class=\"w-75\"><button class=\"orderBtn w-100 py-4\">Bestellen</button></a>
+        echo "                <a href=\"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allCategory");
+        echo "\" class=\"w-75\"><button class=\"orderBtn w-100 py-4\">Bestellen</button></a>
             </div>
             </div>
 
@@ -158,7 +160,7 @@ class __TwigTemplate_4cb725b4d47d7d272a2b126a1c5ddf87 extends Template
                         <div class=\"catoCard card\">
                             <a class=\"catoA\" href=\"";
             // line 49
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_menu", ["id" => twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 49)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category", ["id" => twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 49)]), "html", null, true);
             echo "\">
                                 <img class=\"catoImg1 card-img-top\" src='";
             // line 50
@@ -204,7 +206,7 @@ class __TwigTemplate_4cb725b4d47d7d272a2b126a1c5ddf87 extends Template
 
     public function getDebugInfo()
     {
-        return array (  182 => 58,  170 => 52,  165 => 50,  161 => 49,  157 => 47,  153 => 46,  140 => 35,  130 => 34,  113 => 27,  106 => 22,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  184 => 58,  172 => 52,  167 => 50,  163 => 49,  159 => 47,  155 => 46,  142 => 35,  132 => 34,  115 => 27,  106 => 22,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -230,7 +232,7 @@ class __TwigTemplate_4cb725b4d47d7d272a2b126a1c5ddf87 extends Template
             <br><br>
             <div class=\"orderBtn d-flex justify-content-start my-4\">
 {#                <button class=\"orderBtn w-75 py-4\">Bestellen</button>#}
-                <a href=\"/menu\" class=\"w-75\"><button class=\"orderBtn w-100 py-4\">Bestellen</button></a>
+                <a href=\"{{  path('app_allCategory') }}\" class=\"w-75\"><button class=\"orderBtn w-100 py-4\">Bestellen</button></a>
             </div>
             </div>
 
@@ -257,7 +259,7 @@ class __TwigTemplate_4cb725b4d47d7d272a2b126a1c5ddf87 extends Template
                 {% for categorie in categories %}
                     <div class=\"col px-1\">
                         <div class=\"catoCard card\">
-                            <a class=\"catoA\" href=\"{{ path('app_menu', {id:categorie.id}) }}\">
+                            <a class=\"catoA\" href=\"{{ path('app_category', {id:categorie.id}) }}\">
                                 <img class=\"catoImg1 card-img-top\" src='{{ asset(categorie.picture) }}' alt=\"Card image\">
                                 <div class=\"card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center\">
                                     <h1 class=\"card-title text-light fw-bold text-break\">{{ categorie.name }} pizza</h1>

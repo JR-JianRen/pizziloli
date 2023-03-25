@@ -19,7 +19,7 @@
             <br><br>
             <div class="orderBtn d-flex justify-content-start my-4">
 {#                <button class="orderBtn w-75 py-4">Bestellen</button>#}
-                <a href="/menu" class="w-75"><button class="orderBtn w-100 py-4">Bestellen</button></a>
+                <a href="{{  path('app_allCategory') }}" class="w-75"><button class="orderBtn w-100 py-4">Bestellen</button></a>
             </div>
             </div>
 
@@ -46,7 +46,7 @@
                 {% for categorie in categories %}
                     <div class="col px-1">
                         <div class="catoCard card">
-                            <a class="catoA" href="{{ path('app_menu', {id:categorie.id}) }}">
+                            <a class="catoA" href="{{ path('app_category', {id:categorie.id}) }}">
                                 <img class="catoImg1 card-img-top" src='{{ asset(categorie.picture) }}' alt="Card image">
                                 <div class="card-img-overlay h-100 d-flex flex-column justify-content-center align-items-center">
                                     <h1 class="card-title text-light fw-bold text-break">{{ categorie.name }} pizza</h1>

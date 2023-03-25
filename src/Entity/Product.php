@@ -29,13 +29,6 @@ class Product
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
 
-    #[ORM\OneToMany(mappedBy: 'product', targetEntity: Amount::class)]
-    private Collection $amounts;
-
-    public function __construct()
-    {
-        $this->amounts = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -86,36 +79,6 @@ class Product
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Amount>
-     */
-    public function getAmounts(): Collection
-    {
-        return $this->amounts;
-    }
-
-    public function addAmount(Amount $amount): self
-    {
-        if (!$this->amounts->contains($amount)) {
-            $this->amounts->add($amount);
-            $amount->setProduct($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAmount(Amount $amount): self
-    {
-        if ($this->amounts->removeElement($amount)) {
-            // set the owning side to null (unless already changed)
-            if ($amount->getProduct() === $this) {
-                $amount->setProduct(null);
-            }
-        }
 
         return $this;
     }

@@ -21,11 +21,11 @@ class Order
     #[ORM\Column(length: 255)]
     private ?string $address = null;
 
-    #[ORM\Column]
-    private ?int $order_status = null;
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $product = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 12, scale: 2, nullable: true)]
-    private ?string $total_price = null;
+    #[ORM\Column(length: 255)]
+    private ?string $order_status = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $date = null;
@@ -33,6 +33,18 @@ class Order
     #[ORM\Column(type: Types::TIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $time = null;
 
+    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2, nullable: true)]
+    private ?string $total_price = null;
+
+<<<<<<< Updated upstream
+=======
+    #[ORM\ManyToOne(inversedBy: 'product')]
+    private ?Product $product = null;
+
+    #[ORM\Column]
+    private ?int $amount = null;
+
+>>>>>>> Stashed changes
     public function getId(): ?int
     {
         return $this->id;
@@ -62,26 +74,26 @@ class Order
         return $this;
     }
 
-    public function getOrderStatus(): ?int
+    public function getProduct(): ?string
     {
-        return $this->order_status;
+        return $this->product;
     }
 
-    public function setOrderStatus(int $order_status): self
+    public function setProduct(string $product): self
     {
-        $this->order_status = $order_status;
+        $this->product = $product;
 
         return $this;
     }
 
-    public function getTotalPrice(): ?string
+    public function getOrderStatus(): ?string
     {
-        return $this->total_price;
+        return $this->order_status;
     }
 
-    public function setTotalPrice(?string $total_price): self
+    public function setOrderStatus(string $order_status): self
     {
-        $this->total_price = $total_price;
+        $this->order_status = $order_status;
 
         return $this;
     }
@@ -109,4 +121,43 @@ class Order
 
         return $this;
     }
+
+    public function getTotalPrice(): ?string
+    {
+        return $this->total_price;
+    }
+
+    public function setTotalPrice(?string $total_price): self
+    {
+        $this->total_price = $total_price;
+
+        return $this;
+    }
+<<<<<<< Updated upstream
+=======
+
+    public function getProduct(): ?Product
+    {
+        return $this->product;
+    }
+
+    public function setProduct(?Product $product): self
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    public function getAmount(): ?int
+    {
+        return $this->amount;
+    }
+
+    public function setAmount(int $amount): self
+    {
+        $this->amount = $amount;
+
+        return $this;
+    }
+>>>>>>> Stashed changes
 }
