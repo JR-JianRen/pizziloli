@@ -21,8 +21,8 @@ class Order
     #[ORM\Column(length: 255)]
     private ?string $address = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $product = null;
+//    #[ORM\Column(type: Types::TEXT)]
+//    private ?string $product = null;
 
     #[ORM\Column(length: 255)]
     private ?string $order_status = null;
@@ -36,15 +36,12 @@ class Order
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2, nullable: true)]
     private ?string $total_price = null;
 
-<<<<<<< Updated upstream
-=======
     #[ORM\ManyToOne(inversedBy: 'product')]
     private ?Product $product = null;
 
     #[ORM\Column]
     private ?int $amount = null;
 
->>>>>>> Stashed changes
     public function getId(): ?int
     {
         return $this->id;
@@ -70,18 +67,6 @@ class Order
     public function setAddress(string $address): self
     {
         $this->address = $address;
-
-        return $this;
-    }
-
-    public function getProduct(): ?string
-    {
-        return $this->product;
-    }
-
-    public function setProduct(string $product): self
-    {
-        $this->product = $product;
 
         return $this;
     }
@@ -133,8 +118,6 @@ class Order
 
         return $this;
     }
-<<<<<<< Updated upstream
-=======
 
     public function getProduct(): ?Product
     {
@@ -159,5 +142,4 @@ class Order
 
         return $this;
     }
->>>>>>> Stashed changes
 }

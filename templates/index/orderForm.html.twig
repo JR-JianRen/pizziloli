@@ -5,28 +5,6 @@
 {% block content %}
     <h3 class="fw-bold text-light mt-5">Bestelling overzicht</h3>
     <div class="orderViewForm wrapper bg-light" style="height: 30rem">
-<<<<<<< Updated upstream
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-6">
-                    <p>
-                        {{ form(form) }}
-                    </p>
-                </div>
-                <div class="col-1"></div>
-                <div class="col-5">
-                    <div class="orderView">
-                        <p class="">Bestelling:</p>
-                        <p>{{ test.amount }} x {{ test.size}} {{ product.name }}</p>
-                        <br>
-                        <p class="">Totaal:</p>
-                        <p> € {{ test.amount * product.price }}</p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-=======
         {% for msg in app.session.flashBag.get('succes') %}
             <div class="alert alert-primary text-center" role="alert">
                 {{ msg }}
@@ -85,8 +63,6 @@
                 {% endfor %}
                 </div>
             {% endif %}
-
->>>>>>> Stashed changes
     </div>
 
 

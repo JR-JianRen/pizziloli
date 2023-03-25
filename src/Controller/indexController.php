@@ -4,26 +4,16 @@ namespace App\Controller;
 
 use App\Entity\Order;
 use App\Entity\Product;
-<<<<<<< Updated upstream
-=======
-use App\Form\UserType;
->>>>>>> Stashed changes
-use App\Form\OrderFormType;
 use App\Form\AddToCartType;
+use App\Form\OrderFormType;
 use App\Repository\CategoryRepository;
 use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
-<<<<<<< Updated upstream
-=======
-use App\Repository\UserRepository;
-use Doctrine\ORM\EntityManagerInterface;
->>>>>>> Stashed changes
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
-
 
 class indexController extends AbstractController
 {
@@ -107,8 +97,7 @@ class indexController extends AbstractController
         $addProduct = $session->get('productForm');
         $productId = $session->get('productId');
         $products = $productRepository->find($productId);
-<<<<<<< Updated upstream
-=======
+
         $url = $request->getUri();
         $productPrice = $addProduct['amount'] * $products->getPrice();
 
@@ -129,12 +118,12 @@ class indexController extends AbstractController
             $this->addFlash('succes', 'Bedankt van je aankoop. Je bestelling is geplaats!');
             return $this->redirectToRoute('app_orderForm');
         }
->>>>>>> Stashed changes
 
         return $this->renderForm('index/orderForm.html.twig', [
-            'form' => $form,
+            'orderForm' => $form,
             'product' => $products,
-            'test' => $addProduct,
+            'addProduct' => $addProduct,
+            'url' => $url,
         ]);
     }
 }

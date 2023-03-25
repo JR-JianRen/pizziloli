@@ -87,41 +87,6 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
         // line 6
         echo "    <h3 class=\"fw-bold text-light mt-5\">Bestelling overzicht</h3>
     <div class=\"orderViewForm wrapper bg-light\" style=\"height: 30rem\">
-<<<<<<< Updated upstream
-        <div class=\"container py-5\">
-            <div class=\"row\">
-                <div class=\"col-6\">
-                    <p>
-                        ";
-        // line 12
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'form');
-        echo "
-                    </p>
-                </div>
-                <div class=\"col-1\"></div>
-                <div class=\"col-5\">
-                    <div class=\"orderView\">
-                        <p class=\"\">Bestelling:</p>
-                        <p>";
-        // line 19
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["test"]) || array_key_exists("test", $context) ? $context["test"] : (function () { throw new RuntimeError('Variable "test" does not exist.', 19, $this->source); })()), "amount", [], "any", false, false, false, 19), "html", null, true);
-        echo " x ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["test"]) || array_key_exists("test", $context) ? $context["test"] : (function () { throw new RuntimeError('Variable "test" does not exist.', 19, $this->source); })()), "size", [], "any", false, false, false, 19), "html", null, true);
-        echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 19, $this->source); })()), "name", [], "any", false, false, false, 19), "html", null, true);
-        echo "</p>
-                        <br>
-                        <p class=\"\">Totaal:</p>
-                        <p> € ";
-        // line 22
-        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, (isset($context["test"]) || array_key_exists("test", $context) ? $context["test"] : (function () { throw new RuntimeError('Variable "test" does not exist.', 22, $this->source); })()), "amount", [], "any", false, false, false, 22) * twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 22, $this->source); })()), "price", [], "any", false, false, false, 22)), "html", null, true);
-        echo "</p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-=======
         ";
         // line 8
         $context['_parent'] = $context;
@@ -262,9 +227,7 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
             ";
         }
         // line 66
-        echo "
->>>>>>> Stashed changes
-    </div>
+        echo "    </div>
 
 
 ";
@@ -288,11 +251,7 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
 
     public function getDebugInfo()
     {
-<<<<<<< Updated upstream
-        return array (  116 => 22,  106 => 19,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
-=======
         return array (  230 => 66,  226 => 64,  213 => 57,  206 => 55,  199 => 51,  194 => 49,  189 => 47,  184 => 45,  179 => 43,  175 => 41,  171 => 40,  168 => 39,  166 => 38,  163 => 37,  155 => 32,  143 => 29,  133 => 22,  128 => 19,  119 => 16,  116 => 15,  111 => 14,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
->>>>>>> Stashed changes
     }
 
     public function getSourceContext()
@@ -304,28 +263,6 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
 {% block content %}
     <h3 class=\"fw-bold text-light mt-5\">Bestelling overzicht</h3>
     <div class=\"orderViewForm wrapper bg-light\" style=\"height: 30rem\">
-<<<<<<< Updated upstream
-        <div class=\"container py-5\">
-            <div class=\"row\">
-                <div class=\"col-6\">
-                    <p>
-                        {{ form(form) }}
-                    </p>
-                </div>
-                <div class=\"col-1\"></div>
-                <div class=\"col-5\">
-                    <div class=\"orderView\">
-                        <p class=\"\">Bestelling:</p>
-                        <p>{{ test.amount }} x {{ test.size}} {{ product.name }}</p>
-                        <br>
-                        <p class=\"\">Totaal:</p>
-                        <p> € {{ test.amount * product.price }}</p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-=======
         {% for msg in app.session.flashBag.get('succes') %}
             <div class=\"alert alert-primary text-center\" role=\"alert\">
                 {{ msg }}
@@ -384,11 +321,9 @@ class __TwigTemplate_05ee375ae65ae61f268e97ac2e1a8f11 extends Template
                 {% endfor %}
                 </div>
             {% endif %}
-
->>>>>>> Stashed changes
     </div>
 
 
-{% endblock %}", "index/orderForm.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\index\\orderForm.html.twig");
+{% endblock %}", "index/orderForm.html.twig", "C:\\Users\\0jian\\Documents\\Education\\Github\\pizziloli-website\\templates\\index\\orderForm.html.twig");
     }
 }
