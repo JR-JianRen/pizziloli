@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2023 at 12:49 AM
+-- Generation Time: Mar 25, 2023 at 03:51 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -65,7 +65,9 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20230309130741', '2023-03-09 14:07:46', 690),
 ('DoctrineMigrations\\Version20230309132914', '2023-03-09 14:29:23', 410),
 ('DoctrineMigrations\\Version20230318201242', '2023-03-18 21:12:56', 1650),
-('DoctrineMigrations\\Version20230321183317', '2023-03-21 19:33:28', 1630);
+('DoctrineMigrations\\Version20230321183317', '2023-03-21 19:33:28', 1630),
+('DoctrineMigrations\\Version20230324170241', '2023-03-24 18:02:48', 323),
+('DoctrineMigrations\\Version20230325131859', '2023-03-25 14:19:07', 1672);
 
 -- --------------------------------------------------------
 
@@ -93,12 +95,26 @@ CREATE TABLE `order` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `product` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `order_status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
-  `total_price` decimal(10,2) DEFAULT NULL
+  `total_price` decimal(10,2) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`id`, `name`, `address`, `order_status`, `date`, `time`, `total_price`, `product_id`, `amount`) VALUES
+(1, 'Jian', 'Home', 'Bezig', '2023-03-25', '15:19:16', '167.88', 3, 12),
+(2, 'Jian', 'Home', 'Bezig', '2023-03-25', '15:20:23', '167.88', 3, 12),
+(3, 'Jian', 'Home', 'Bezig', '2023-03-25', '15:20:50', '167.88', 3, 12),
+(4, 'Jian', 'Home', 'Bezig', '2023-03-25', '15:21:08', '167.88', 3, 12),
+(5, 'Jian', 'Home', 'Bezig', '2023-03-25', '15:22:30', '167.88', 3, 12),
+(6, 'Pietje', 'Solleveldpad 12, 2554 CA Den Haag', 'Bezig', '2023-03-25', '15:23:04', '25.98', 1, 2),
+(7, 'Pietje', 'Solleveldpad 12, 2554 CA Den Haag', 'Bezig', '2023-03-25', '15:25:31', '25.98', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -163,7 +179,8 @@ ALTER TABLE `messenger_messages`
 -- Indexes for table `order`
 --
 ALTER TABLE `order`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_F52993984584665A` (`product_id`);
 
 --
 -- Indexes for table `product`
@@ -198,7 +215,7 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -215,6 +232,12 @@ ALTER TABLE `user`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `order`
+--
+ALTER TABLE `order`
+  ADD CONSTRAINT `FK_F52993984584665A` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`);
 
 --
 -- Constraints for table `product`
