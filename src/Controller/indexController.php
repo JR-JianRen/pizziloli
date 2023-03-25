@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Order;
 use App\Entity\Product;
 use App\Form\AddToCartType;
+use App\Form\LoginType;
 use App\Form\OrderFormType;
 use App\Repository\CategoryRepository;
 use App\Repository\OrderRepository;
@@ -124,6 +125,25 @@ class indexController extends AbstractController
             'product' => $products,
             'addProduct' => $addProduct,
             'url' => $url,
+        ]);
+    }
+
+    #[Route('/login', name: 'app_login')]
+    public function login(Request $request): Response
+    {
+
+        $form = $this->createForm( LoginType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // data is an array with "amount" and "size" keys
+            $data = $form->getData();
+
+//            return $this->redirectToRoute('app_orderForm');
+        }
+
+        return $this->renderForm('index/login.html.twig',[
+            'loginForm' => $form,
         ]);
     }
 }

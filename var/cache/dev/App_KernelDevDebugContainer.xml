@@ -340,6 +340,9 @@
     <service id="App\Form\AddToCartType" class="App\Form\AddToCartType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\LoginType" class="App\Form\LoginType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\OrderFormType" class="App\Form\OrderFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -1140,6 +1143,7 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\AddToCartType</argument>
+        <argument>App\Form\LoginType</argument>
         <argument>App\Form\OrderFormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -3285,7 +3289,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.zQHBy7U"/>
+      <argument type="service" id=".service_locator.u3qcQti"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -6125,6 +6129,8 @@
     <service id=".abstract.instanceof.App\Controller\indexController" class="App\Controller\indexController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AddToCartType" class="App\Form\AddToCartType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AddToCartType" class="App\Form\AddToCartType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LoginType" class="App\Form\LoginType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\LoginType" class="App\Form\LoginType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\OrderFormType" class="App\Form\OrderFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\OrderFormType" class="App\Form\OrderFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" abstract="true"/>
@@ -6584,10 +6590,11 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.zQHBy7U" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.u3qcQti" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AddToCartType" type="service_closure" id="App\Form\AddToCartType"/>
+        <argument key="App\Form\LoginType" type="service_closure" id="App\Form\LoginType"/>
         <argument key="App\Form\OrderFormType" type="service_closure" id="App\Form\OrderFormType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
@@ -8136,7 +8143,7 @@
     <service id=".service_locator.5ckaP5z" alias=".service_locator.URIEtQd"/>
     <service id=".service_locator.kfa.eP_" alias=".service_locator.FJhkud1"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.uJxdrWC" alias=".service_locator.zQHBy7U"/>
+    <service id=".service_locator.XNMTsCn" alias=".service_locator.u3qcQti"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
