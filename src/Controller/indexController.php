@@ -7,9 +7,11 @@ use App\Entity\Product;
 use App\Form\AddToCartType;
 use App\Form\LoginType;
 use App\Form\OrderFormType;
+use App\Form\editOrderStatusType;
 use App\Repository\CategoryRepository;
 use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -145,7 +147,7 @@ class indexController extends AbstractController
         ]);
     }
 
-    //orderForm
+    //orderFormAdmin
     #[Route('/orderForm/admin', name: 'app_orderFormAdmin')]
     public function orderFormAdmin(Request $request,  OrderRepository $orderRepository): Response
     {
@@ -157,6 +159,39 @@ class indexController extends AbstractController
         'url' => $url,
         ]);
     }
+
+    //orderFormAdminDelete
+    #[Route('/orderForm/admin/delete/{id}', name: 'deleteOrder')]
+    public function deleteOrder(Request $request, $id, OrderRepository $orderRepository, EntityManagerInterface $em): Response
+    {
+        $order = $orderRepository->find($id);
+        $em->remove($order);
+        $em->flush();
+
+        return $this->redirectToRoute('app_orderFormAdmin');
+
+    }
+
+    //orderFormAdminUpdate
+    #[Route('/orderForm/admin/updateStatus/{id}', name: 'updateStatus')]
+    public function updateStatus(Request $request, $id, OrderRepository $orderRepository, EntityManagerInterface $em): Response
+    {
+        $order = $orderRepository->find($id);
+        $form = $this->createForm(editOrderStatusType::class, $order);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $order->setOrderStatus($form->get('order_status')->getData());
+            $em->flush();
+            return $this->redirectToRoute('app_orderFormAdmin');
+        }
+
+        return $this->renderForm('index/updateStatus.html.twig', [
+            'updateStatus' => $form,
+        ]);
+
+    }
+
 }
 
 
