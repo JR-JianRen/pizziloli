@@ -251,7 +251,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
                 <li class=\"nav-item\">
                     <a class=\"nav-link text-light fs-3\" href=\"";
         // line 77
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\"><i class=\"bi bi-person-fill\"></i></a>
                 </li>
                 <li class=\"nav-item\">
@@ -394,7 +394,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
                     <a class=\"nav-link text-light fs-3\" href=\"{{ path('app_home') }}\"><i class=\"fa-solid fa-house\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-3\" href=\"{{ path('app_contact') }}\"><i class=\"bi bi-person-fill\"></i></a>
+                    <a class=\"nav-link text-light fs-3\" href=\"{{ path('app_login') }}\"><i class=\"bi bi-person-fill\"></i></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link text-light fs-1\" href=\"{{ path('app_contact') }}\"><i class=\"bi bi-info-lg\"></i></a>
