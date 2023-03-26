@@ -249,7 +249,10 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         echo "\"><i class=\"fa-solid fa-house\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-3\" href=\"/login\"><i class=\"bi bi-person-fill\"></i></a>
+                    <a class=\"nav-link text-light fs-3\" href=\"";
+        // line 77
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo "\"><i class=\"bi bi-person-fill\"></i></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link text-light fs-1\" href=\"";
@@ -310,7 +313,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     public function getDebugInfo()
     {
-        return array (  291 => 93,  281 => 92,  263 => 83,  257 => 80,  248 => 74,  216 => 44,  206 => 43,  195 => 40,  185 => 39,  171 => 34,  161 => 33,  150 => 21,  146 => 18,  142 => 15,  136 => 12,  134 => 11,  124 => 10,  105 => 5,  93 => 95,  91 => 92,  88 => 91,  86 => 43,  83 => 42,  80 => 39,  78 => 33,  71 => 28,  69 => 23,  67 => 10,  64 => 9,  59 => 6,  55 => 5,  49 => 1,);
+        return array (  294 => 93,  284 => 92,  266 => 83,  260 => 80,  254 => 77,  248 => 74,  216 => 44,  206 => 43,  195 => 40,  185 => 39,  171 => 34,  161 => 33,  150 => 21,  146 => 18,  142 => 15,  136 => 12,  134 => 11,  124 => 10,  105 => 5,  93 => 95,  91 => 92,  88 => 91,  86 => 43,  83 => 42,  80 => 39,  78 => 33,  71 => 28,  69 => 23,  67 => 10,  64 => 9,  59 => 6,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -391,7 +394,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
                     <a class=\"nav-link text-light fs-3\" href=\"{{ path('app_home') }}\"><i class=\"fa-solid fa-house\"></i></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light fs-3\" href=\"/login\"><i class=\"bi bi-person-fill\"></i></a>
+                    <a class=\"nav-link text-light fs-3\" href=\"{{ path('app_login') }}\"><i class=\"bi bi-person-fill\"></i></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link text-light fs-1\" href=\"{{ path('app_contact') }}\"><i class=\"bi bi-info-lg\"></i></a>
@@ -411,6 +414,6 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
     {% endblock %}
 </div>
 </body>
-</html>", "/base.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\base.html.twig");
+</html>", "/base.html.twig", "C:\\Users\\0jian\\Documents\\Education\\Github\\pizziloli-website\\templates\\base.html.twig");
     }
 }

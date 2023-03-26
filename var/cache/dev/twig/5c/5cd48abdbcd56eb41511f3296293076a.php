@@ -109,7 +109,7 @@ class __TwigTemplate_8b31512c2e9cd6daa920363c355f9f2e extends Template
             echo "\" class=\"text-decoration-none\">
     <img src=\"";
             // line 17
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/catoImg3.jpg"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, $context["product"], "picture", [], "any", false, false, false, 17)), "html", null, true);
             echo "\" class=\"productImg shadow card-img-top rounded\" alt=\"...\">
     <div class=\"card-body text-light\">
      <h3 class=\"card-subtitle text-center fs-3\">";
@@ -173,7 +173,7 @@ class __TwigTemplate_8b31512c2e9cd6daa920363c355f9f2e extends Template
  <div class=\"col-3 mt-4\">
    <div class=\"card bg-black border-0 \">
     <a href=\"{{ path('app_addToCart', {id:product.id}) }}\" class=\"text-decoration-none\">
-    <img src=\"{{ asset('/img/catoImg3.jpg')}}\" class=\"productImg shadow card-img-top rounded\" alt=\"...\">
+    <img src=\"{{ asset(product.picture)}}\" class=\"productImg shadow card-img-top rounded\" alt=\"...\">
     <div class=\"card-body text-light\">
      <h3 class=\"card-subtitle text-center fs-3\">{{ product.name }}</h3>
      <p class=\"card-subtitle text-center mt-2\">€{{ product.price }}</p>
@@ -183,10 +183,6 @@ class __TwigTemplate_8b31512c2e9cd6daa920363c355f9f2e extends Template
  </div>
  {% endfor %}
  </div>
-<<<<<<< Updated upstream
-{% endblock %}", "index/category.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\index\\category.html.twig");
-=======
 {% endblock %}", "index/category.html.twig", "C:\\Users\\0jian\\Documents\\Education\\Github\\pizziloli-website\\templates\\index\\category.html.twig");
->>>>>>> Stashed changes
     }
 }

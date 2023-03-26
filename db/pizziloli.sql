@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2023 at 03:51 PM
+-- Generation Time: Mar 26, 2023 at 03:35 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -40,9 +40,9 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `picture`) VALUES
-(1, 'Vegetarisch', '/img/catoImg1.jpg'),
-(2, 'Vlees', '/img/catoImg2.jpg'),
-(3, 'Vis', '/img/catoImg3.jpg');
+(1, 'Vegetarisch', '/img/category/catoImg3.jpg'),
+(2, 'Vlees', '/img/category/catoImg2.jpg'),
+(3, 'Vis', '/img/category/catoImg1.jpg');
 
 -- --------------------------------------------------------
 
@@ -103,19 +103,6 @@ CREATE TABLE `order` (
   `amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `order`
---
-
-INSERT INTO `order` (`id`, `name`, `address`, `order_status`, `date`, `time`, `total_price`, `product_id`, `amount`) VALUES
-(1, 'Jian', 'Home', 'Bezig', '2023-03-25', '15:19:16', '167.88', 3, 12),
-(2, 'Jian', 'Home', 'Bezig', '2023-03-25', '15:20:23', '167.88', 3, 12),
-(3, 'Jian', 'Home', 'Bezig', '2023-03-25', '15:20:50', '167.88', 3, 12),
-(4, 'Jian', 'Home', 'Bezig', '2023-03-25', '15:21:08', '167.88', 3, 12),
-(5, 'Jian', 'Home', 'Bezig', '2023-03-25', '15:22:30', '167.88', 3, 12),
-(6, 'Pietje', 'Solleveldpad 12, 2554 CA Den Haag', 'Bezig', '2023-03-25', '15:23:04', '25.98', 1, 2),
-(7, 'Pietje', 'Solleveldpad 12, 2554 CA Den Haag', 'Bezig', '2023-03-25', '15:25:31', '25.98', 1, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -135,8 +122,9 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `price`, `picture`, `category_id`) VALUES
-(1, 'Pepperoni pizza', '12.99', '/img/catoImg3.jpg', 2),
-(3, 'Champion pizza', '13.99', '/img/catoImg3.jpg', 1);
+(1, 'Pepperoni pizza', '12.99', '/img/product/pepperoniPizza.jpg', 2),
+(3, 'Champignon pizza', '13.99', '/img/product/champignonPizza.jpg', 1),
+(4, 'Margarita pizza', '12.99', '/img/product/margaritaPizza.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -215,13 +203,13 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`

@@ -184,6 +184,6 @@ class __TwigTemplate_5f8c9be654242f63b158b3be176a07d7 extends Template
         <div class=\"col-1\"></div>
     </div>
 #}
-{% endblock %}", "index/contact.html.twig", "C:\\Users\\SD Student\\Documents\\GitHub\\pizziloli-website\\templates\\index\\contact.html.twig");
+{% endblock %}", "index/contact.html.twig", "C:\\Users\\0jian\\Documents\\Education\\Github\\pizziloli-website\\templates\\index\\contact.html.twig");
     }
 }

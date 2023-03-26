@@ -4,37 +4,20 @@
 
 {% block content %}
     <h3 class="fw-bold text-light mt-5">Bestelling overzicht</h3>
-    <div class="orderViewForm wrapper bg-light" style="height: 30rem">
-<<<<<<< Updated upstream
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-6">
-                    <p>
-                        {{ form(form) }}
-                    </p>
-                </div>
-                <div class="col-1"></div>
-                <div class="col-5">
-                    <div class="orderView">
-                        <p class="">Bestelling:</p>
-                        <p>{{ test.amount }} x {{ test.size}} {{ product.name }}</p>
-                        <br>
-                        <p class="">Totaal:</p>
-                        <p> € {{ test.amount * product.price }}</p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-=======
+    <div class="orderViewForm wrapper bg-light">
         {% for msg in app.session.flashBag.get('succes') %}
             <div class="alert alert-primary text-center" role="alert">
                 {{ msg }}
             </div>
         {% endfor %}
-            {% if url == 'http://127.0.0.1:8000/orderForm' %}
+            {% if url == 'http://127.0.0.1:8000/orderForm'%}
+                {% for msg in app.session.flashBag.get('failed') %}
+                    <div class="alert alert-secondary text-danger fw-bold" role="alert">
+                        {{ msg }}
+                    </div>
+                {% endfor %}
                 {% for msg in app.session.flashBag.get('succes') %}
-                    <div class="alert alert-secondary" role="alert">
+                    <div class="alert alert-secondary fw-bold text-primary" role="alert">
                         {{ msg }}
                     </div>
                 {% endfor %}
@@ -46,13 +29,19 @@
                     </div>
                     <div class="col-1"></div>
                     <div class="col-5">
+
                         <div class="orderView">
                             <p class="">Bestelling:</p>
+                            {% if check == true %}
                             <div>{{ addProduct.amount }} x {{ addProduct.size}} {{ product.name }} I €{{ addProduct.amount * product.price }}</div>
+                            {% endif %}
                             <br>
                             <p class="">Totaal:</p>
+                            {% if check == true %}
                             <p> € {{ addProduct.amount * product.price }}</p>
+                            {% endif %}
                         </div>
+
                     </div>
                 </div>
             {% endif %}
@@ -61,6 +50,7 @@
                 <div class="row py-5 mx-3">
                 {%  for order in orders %}
                     <div class="col-2">
+                        <hr>
                     <p>
                         Status: {{ order.orderStatus }}
                         <br><br>
@@ -71,23 +61,18 @@
                         Naam: {{ order.name }}
                         <br>
                         Adres: {{ order.address }}
-
                     </p>
                     <p>
                         Bestelling: <br> {{ order.amount }} x {{ order.product.name }}
                         <br><br>
                         Totaal prijs: {{ order.totalPrice }}
+                        <br><br>
+                        <a class="btn btn-danger" href="{{ path('deleteOrder', { id:order.id }) }}">Delete</a>
+                        <a class="btn btn-primary" href="{{ path('updateStatus', { id:order.id}) }}">Update status</a>
                     </p>
-                        <p>
-
-                        </p>
                     </div>
                 {% endfor %}
                 </div>
             {% endif %}
-
->>>>>>> Stashed changes
     </div>
-
-
 {% endblock %}

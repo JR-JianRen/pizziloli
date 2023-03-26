@@ -4,26 +4,19 @@ namespace App\Controller;
 
 use App\Entity\Order;
 use App\Entity\Product;
-<<<<<<< Updated upstream
-=======
-use App\Form\UserType;
->>>>>>> Stashed changes
-use App\Form\OrderFormType;
 use App\Form\AddToCartType;
+use App\Form\LoginType;
+use App\Form\OrderFormType;
+use App\Form\UpdateStatusType;
 use App\Repository\CategoryRepository;
 use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
-<<<<<<< Updated upstream
-=======
-use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
->>>>>>> Stashed changes
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
-
 
 class indexController extends AbstractController
 {
@@ -95,7 +88,6 @@ class indexController extends AbstractController
         return $this->renderForm('index/addToCart.twig',[
             'addToCarForm' => $form,
             'product' => $product,
-            'test' => print_r($addProduct),
         ]);
     }
 
@@ -107,36 +99,107 @@ class indexController extends AbstractController
         $addProduct = $session->get('productForm');
         $productId = $session->get('productId');
         $products = $productRepository->find($productId);
-<<<<<<< Updated upstream
-=======
-        $url = $request->getUri();
-        $productPrice = $addProduct['amount'] * $products->getPrice();
 
+        $url = $request->getUri();
+        $check = false;
         $order = new Order();
-        $order->setOrderStatus('Bezig');
-        $order->setDate(new \DateTime());
-        $order->setTime(new \DateTime());
-        $order->setAmount($addProduct['amount']);
-        $order->setProduct($productRepository->find($productId));
-        $order->setTotalPrice($productPrice);
+        if (isset($addProduct)) {
+            $productPrice = $addProduct['amount'] * $products->getPrice();
+            $order->setOrderStatus('Bezig');
+            $order->setDate(new \DateTime());
+            $order->setTime(new \DateTime());
+            $order->setAmount($addProduct['amount']);
+            $order->setProduct($productRepository->find($productId));
+            $order->setTotalPrice($productPrice);
+            $check = true;
+        }
+
         $form = $this->createForm( OrderFormType::class, $order);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid() && $check == true) {
             $data = $form->getData();
             $orderRepository->save($data);
 
             $this->addFlash('succes', 'Bedankt van je aankoop. Je bestelling is geplaats!');
+
+            $session->remove('productForm');
             return $this->redirectToRoute('app_orderForm');
+        }else if ($form->isSubmitted() && $form->isValid() && $check == false){
+            $this->addFlash('failed', 'Voeg eerst een product toe in je bestelling');
         }
->>>>>>> Stashed changes
 
         return $this->renderForm('index/orderForm.html.twig', [
-            'form' => $form,
+            'orderForm' => $form,
             'product' => $products,
-            'test' => $addProduct,
+            'addProduct' => $addProduct,
+            'url' => $url,
+            'check' => $check,
         ]);
     }
+
+    #[Route('/login', name: 'app_login')]
+    public function login(Request $request): Response
+    {
+
+        $form = $this->createForm( LoginType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+
+            return $this->redirectToRoute('app_orderFormAdmin');
+        }
+
+        return $this->renderForm('index/login.html.twig',[
+            'loginForm' => $form,
+        ]);
+    }
+
+    //orderFormAdmin
+    #[Route('/orderForm/admin', name: 'app_orderFormAdmin')]
+    public function orderFormAdmin(Request $request,  OrderRepository $orderRepository): Response
+    {
+        $order = $orderRepository->findAll();
+        $url = $request->getUri();
+
+        return $this->renderForm('index/orderForm.html.twig', [
+        'orders' => $order,
+        'url' => $url,
+        ]);
+    }
+
+    //orderFormAdminDelete
+    #[Route('/orderForm/admin/delete/{id}', name: 'deleteOrder')]
+    public function deleteOrder(Request $request, $id, OrderRepository $orderRepository, EntityManagerInterface $em): Response
+    {
+        $order = $orderRepository->find($id);
+        $em->remove($order);
+        $em->flush();
+
+        return $this->redirectToRoute('app_orderFormAdmin');
+
+    }
+
+    //updateStatus
+    #[Route('/orderForm/admin/updateStatus/{id}', name: 'updateStatus')]
+    public function updateStatus(Request $request, $id, OrderRepository $orderRepository, EntityManagerInterface $em): Response
+    {
+        $order = $orderRepository->find($id);
+        $form = $this->createForm(UpdateStatusType::class, $order);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $order->setOrderStatus($form->get('order_status')->getData());
+            $em->flush();
+            return $this->redirectToRoute('app_orderFormAdmin');
+        }
+
+        return $this->renderForm('index/updateStatus.html.twig', [
+            'updateStatus' => $form,
+        ]);
+    }
+
 }
 
 
