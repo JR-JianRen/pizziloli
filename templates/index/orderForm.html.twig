@@ -1,0 +1,78 @@
+{% extends '/base.html.twig' %}
+
+{% block title %} Bestelling overzicht {% endblock %}
+
+{% block content %}
+    <h3 class="fw-bold text-light mt-5">Bestelling overzicht</h3>
+    <div class="orderViewForm wrapper bg-light">
+        {% for msg in app.session.flashBag.get('succes') %}
+            <div class="alert alert-primary text-center" role="alert">
+                {{ msg }}
+            </div>
+        {% endfor %}
+            {% if url == 'http://127.0.0.1:8000/orderForm'%}
+                {% for msg in app.session.flashBag.get('failed') %}
+                    <div class="alert alert-secondary text-danger fw-bold" role="alert">
+                        {{ msg }}
+                    </div>
+                {% endfor %}
+                {% for msg in app.session.flashBag.get('succes') %}
+                    <div class="alert alert-secondary fw-bold text-primary" role="alert">
+                        {{ msg }}
+                    </div>
+                {% endfor %}
+                <div class="row py-5 mx-3">
+                    <div class="col-5">
+                        <div class="offset-2">
+                            {{ form(orderForm) }}
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-5">
+
+                        <div class="orderView">
+                            <p class="">Bestelling:</p>
+                            {% if check == true %}
+                            <div>{{ addProduct.amount }} x {{ addProduct.size}} {{ product.name }} I €{{ addProduct.amount * product.price }}</div>
+                            {% endif %}
+                            <br>
+                            <p class="">Totaal:</p>
+                            {% if check == true %}
+                            <p> € {{ addProduct.amount * product.price }}</p>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if url == 'http://127.0.0.1:8000/orderForm/admin' %}
+                <div class="row py-5 mx-3">
+                {%  for order in orders %}
+                    <div class="col-2">
+                        <hr>
+                    <p>
+                        Status: {{ order.orderStatus }}
+                        <br><br>
+                        {{ order.date|date('m/d/Y') }}
+                        <br>
+                        {{ order.time|date('H:i:s') }}
+                        <br><br>
+                        Naam: {{ order.name }}
+                        <br>
+                        Adres: {{ order.address }}
+                    </p>
+                    <p>
+                        Bestelling: <br> {{ order.amount }} x {{ order.product.name }}
+                        <br><br>
+                        Totaal prijs: {{ order.totalPrice }}
+                        <br><br>
+                        <a class="btn btn-danger" href="{{ path('deleteOrder', { id:order.id }) }}">Delete</a>
+                        <a class="btn btn-primary" href="{{ path('updateStatus', { id:order.id}) }}">Update status</a>
+                    </p>
+                    </div>
+                {% endfor %}
+                </div>
+            {% endif %}
+    </div>
+{% endblock %}
