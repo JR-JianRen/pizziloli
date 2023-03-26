@@ -7,7 +7,7 @@ use App\Entity\Product;
 use App\Form\AddToCartType;
 use App\Form\LoginType;
 use App\Form\OrderFormType;
-use App\Form\editOrderStatusType;
+use App\Form\UpdateStatusType;
 use App\Repository\CategoryRepository;
 use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
@@ -101,24 +101,32 @@ class indexController extends AbstractController
         $products = $productRepository->find($productId);
 
         $url = $request->getUri();
-        $productPrice = $addProduct['amount'] * $products->getPrice();
-
+        $check = false;
         $order = new Order();
-        $order->setOrderStatus('Bezig');
-        $order->setDate(new \DateTime());
-        $order->setTime(new \DateTime());
-        $order->setAmount($addProduct['amount']);
-        $order->setProduct($productRepository->find($productId));
-        $order->setTotalPrice($productPrice);
+        if (isset($addProduct)) {
+            $productPrice = $addProduct['amount'] * $products->getPrice();
+            $order->setOrderStatus('Bezig');
+            $order->setDate(new \DateTime());
+            $order->setTime(new \DateTime());
+            $order->setAmount($addProduct['amount']);
+            $order->setProduct($productRepository->find($productId));
+            $order->setTotalPrice($productPrice);
+            $check = true;
+        }
+
         $form = $this->createForm( OrderFormType::class, $order);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid() && $check == true) {
             $data = $form->getData();
             $orderRepository->save($data);
 
             $this->addFlash('succes', 'Bedankt van je aankoop. Je bestelling is geplaats!');
+
+            $session->remove('productForm');
             return $this->redirectToRoute('app_orderForm');
+        }else if ($form->isSubmitted() && $form->isValid() && $check == false){
+            $this->addFlash('failed', 'Voeg eerst een product toe in je bestelling');
         }
 
         return $this->renderForm('index/orderForm.html.twig', [
@@ -126,6 +134,7 @@ class indexController extends AbstractController
             'product' => $products,
             'addProduct' => $addProduct,
             'url' => $url,
+            'check' => $check,
         ]);
     }
 
@@ -172,12 +181,12 @@ class indexController extends AbstractController
 
     }
 
-    //orderFormAdminUpdate
+    //updateStatus
     #[Route('/orderForm/admin/updateStatus/{id}', name: 'updateStatus')]
     public function updateStatus(Request $request, $id, OrderRepository $orderRepository, EntityManagerInterface $em): Response
     {
         $order = $orderRepository->find($id);
-        $form = $this->createForm(editOrderStatusType::class, $order);
+        $form = $this->createForm(UpdateStatusType::class, $order);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -189,7 +198,6 @@ class indexController extends AbstractController
         return $this->renderForm('index/updateStatus.html.twig', [
             'updateStatus' => $form,
         ]);
-
     }
 
 }

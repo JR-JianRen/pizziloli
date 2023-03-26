@@ -17,7 +17,7 @@ class LoginType extends AbstractType
 //            ->add('password')
             ->add('Inloggen', SubmitType::class,
             ['attr' => array(
-                'class' => 'offset-3 bg-primary text-light fw-bold'
+                'class' => 'offset-2 bg-primary text-light fw-bold'
             )])
         ;
     }
