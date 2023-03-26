@@ -1,0 +1,124 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8E63E3ED-E302-B40B-5D12-223DDD50D959" name="Order">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 12:33:12 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<engineerTo>
+<item key="23228185-F4EA-30F9-D599-1A4E68E43414" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="EDB53475-BC3C-8C62-1B1F-14ACAEC17BB6">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 12:47:05 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<engineerTo>
+<item key="23228185-F4EA-30F9-D599-1A4E68E43414" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="DE1A4535-0F20-1545-85EA-DD1546684675">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 12:42:40 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<engineerTo>
+<item key="23228185-F4EA-30F9-D599-1A4E68E43414" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="address" id="5EDFBE2B-9C2E-138A-2533-222C67E87D49">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 12:36:17 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<engineerTo>
+<item key="23228185-F4EA-30F9-D599-1A4E68E43414" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="order_status" id="673EDA3E-4472-6443-97AF-43BF9A1F9D9D">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 12:53:55 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<engineerTo>
+<item key="23228185-F4EA-30F9-D599-1A4E68E43414" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="total_price" id="98C3C408-B780-72FE-6269-A4C8F6D7777B">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 13:08:55 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<engineerTo>
+<item key="23228185-F4EA-30F9-D599-1A4E68E43414" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="date" id="C80295DC-756D-B426-5210-8F1182AB2849">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 12:48:48 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<engineerTo>
+<item key="23228185-F4EA-30F9-D599-1A4E68E43414" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="time" id="004E4A36-FC68-CEBB-DBDF-F941830F43C1">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 12:49:50 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<engineerTo>
+<item key="23228185-F4EA-30F9-D599-1A4E68E43414" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="72018EBB-1544-D95C-44F1-2328F57AEFB2" name="order PK">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 12:36:16 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<engineerTo>
+<item key="23228185-F4EA-30F9-D599-1A4E68E43414" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>EDB53475-BC3C-8C62-1B1F-14ACAEC17BB6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D3ACCF20-D02C-5CDC-77D3-4A74A992B8F8" name="Order">
+<createdBy>SD Student</createdBy>
+<createdTime>2023-03-08 13:47:41 UTC</createdTime>
+<generatorID>8E63E3ED-E302-B40B-5D12-223DDD50D959</generatorID>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="87ED60FE-6E60-9918-B1A1-9BBFAC39F9DC">
+<createdBy>SD Student</createdBy>
+<createdTime>2023-03-08 13:47:41 UTC</createdTime>
+<generatorID>EDB53475-BC3C-8C62-1B1F-14ACAEC17BB6</generatorID>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="854D768D-C007-8EC3-4F1D-F13E723A580B">
+<createdBy>SD Student</createdBy>
+<createdTime>2023-03-08 13:47:41 UTC</createdTime>
+<generatorID>DE1A4535-0F20-1545-85EA-DD1546684675</generatorID>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="address" id="38DB72AB-6517-08D3-3B96-8F779246965C">
+<createdBy>SD Student</createdBy>
+<createdTime>2023-03-08 13:47:41 UTC</createdTime>
+<generatorID>5EDFBE2B-9C2E-138A-2533-222C67E87D49</generatorID>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="order_status" id="F5B4CC7C-4FE7-9C92-CF1C-FF5A4F6DC908">
+<createdBy>SD Student</createdBy>
+<createdTime>2023-03-08 13:47:41 UTC</createdTime>
+<generatorID>673EDA3E-4472-6443-97AF-43BF9A1F9D9D</generatorID>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="total_price" id="B35B4912-FFF0-DBC9-FBFD-BEE7845B898B">
+<createdBy>SD Student</createdBy>
+<createdTime>2023-03-08 13:47:41 UTC</createdTime>
+<generatorID>98C3C408-B780-72FE-6269-A4C8F6D7777B</generatorID>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="D89F8C84-8C87-ADC8-0EA3-C2569171C97A">
+<createdBy>SD Student</createdBy>
+<createdTime>2023-03-08 13:47:41 UTC</createdTime>
+<generatorID>C80295DC-756D-B426-5210-8F1182AB2849</generatorID>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="time" id="1A6D9797-79E4-AF39-F20B-EEC5D14F5B4E">
+<createdBy>SD Student</createdBy>
+<createdTime>2023-03-08 13:47:41 UTC</createdTime>
+<generatorID>004E4A36-FC68-CEBB-DBDF-F941830F43C1</generatorID>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DF11CF6D-0AF6-4DE1-7298-2CDC1F582B39" name="Order_PK">
+<createdBy>SD Student</createdBy>
+<createdTime>2023-03-08 13:47:41 UTC</createdTime>
+<generatorID>72018EBB-1544-D95C-44F1-2328F57AEFB2</generatorID>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87ED60FE-6E60-9918-B1A1-9BBFAC39F9DC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

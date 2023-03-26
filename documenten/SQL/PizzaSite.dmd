@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="PizzaSite" id="69F65B99-1734-798E-5323-5D70F8724243" version="3.5">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 11:51:46 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>69F65B99-1734-798E-5323-5D70F8724243</designId>
+</OSDM_Design>

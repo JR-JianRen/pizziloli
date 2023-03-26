@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E67AB739-3064-C254-8F4A-5EADFF3A4A90" name="User">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 12:05:07 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<engineerTo>
+<item key="23228185-F4EA-30F9-D599-1A4E68E43414" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="B3BEF8F9-FFD3-7F2F-BB44-7BE6D913C548">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 12:20:28 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<engineerTo>
+<item key="23228185-F4EA-30F9-D599-1A4E68E43414" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="username" id="2EA6A746-BB6D-2BF7-9388-283863C58DA0">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 12:20:49 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<engineerTo>
+<item key="23228185-F4EA-30F9-D599-1A4E68E43414" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="password" id="A94FD3E6-E6BD-17CB-709D-358C7C27F82D">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 12:21:10 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<engineerTo>
+<item key="23228185-F4EA-30F9-D599-1A4E68E43414" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="07E69541-9AEA-591E-6AEA-EBC07C387735" name="user PK">
+<createdBy>0jian</createdBy>
+<createdTime>2023-02-10 12:20:48 UTC</createdTime>
+<ownerDesignName>PizzaSite</ownerDesignName>
+<engineerTo>
+<item key="23228185-F4EA-30F9-D599-1A4E68E43414" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B3BEF8F9-FFD3-7F2F-BB44-7BE6D913C548</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
